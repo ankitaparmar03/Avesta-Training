@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // program name : payroll statement
+      // purpose : Create payroll statement from pay data
+
+      document.write(" WELCOME TO THE PAYROLL STATEMENT PROGRAM ! <p/> ");
+
+      const employeeLastName = prompt(" Please Enter Employee Last Name :");
+      const employeeFirstName = prompt(" Please Enter Employee First Name :");
+      const hoursWorked = parseInt(prompt(" Enter The Number Of Hours Worked "));
+      const wageRate = parseFloat(prompt("Enter The Wage Rate For This Employee :"));
+      const totalDeduction = parseInt(prompt(" Enter The Total Deductions For This Employee :"));
+      const grossPay = hoursWorked * wageRate;
+      const netPay = grossPay - totalDeduction;
+
+      document.write(" Payroll Statement For " + employeeFirstName + " " + employeeLastName + " <br/>");
+      document.write(" Employee's Hours Worked  is " + hoursWorked + " <br/>");
+      document.write(" Employee's Wage Rate is $ " + wageRate.toFixed(2) + " <br/>");
+      document.write(" Employee's Gross Pay is $ " + grossPay.toFixed(2) + " <br/>");
+      document.write(" Employee's  Total Deduction is $ " + totalDeduction.toFixed(2) + " <br/>");
+      document.write(" Employee's Net  Pay is $ " + netPay.toFixed(2) + " <p/>");
+
+      document.write(" THANK YOU FOR USING THIS PROGRAM !  ");
+    </script>
+  </head>
+  <body></body>
+</html>

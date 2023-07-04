@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // program name : Customer statistics
+      //purpose : compute total  and average number  of customer over 4 hours
+      // count = count of customers each other
+
+      document.write(" Sunshine Books Customer Statistics Program ! <p/> ");
+      const count1 = parseInt(prompt(" Enter the customers for the first hours"));
+      const count2 = parseInt(prompt(" Enter the customers for the second hours"));
+      const count3 = parseInt(prompt(" Enter the customers for the third hours"));
+      const count4 = parseInt(prompt(" Enter the customers for the forth hours"));
+
+      const NUM_HOURS = 4;
+
+      const totalCustomer = count1 + count2 + count3 + count4;
+      const averageCustomer = totalCustomer / NUM_HOURS;
+
+      document.write(" The Total Customer Is " + totalCustomer + "<br/>");
+      document.write(" The Average Customer Per Hours " + averageCustomer + "<p/>");
+      document.write(" Thank You !");
+    </script>
+  </head>
+  <body></body>
+</html>
