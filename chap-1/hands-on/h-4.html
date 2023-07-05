@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+
+      document.write(
+        " Welcome To The Justin Promoting Metric System Program ! <p/>"
+      );
+      const kilometers = parseFloat(
+        prompt(" Enter The Number Of Kilometers To Converting Miles :")
+      );
+      const miles = parseFloat(
+        prompt("Enter The Number Of Miles To Converting kilometers :")
+      );
+
+      const convertMiles = kilometers * 1.609;
+      const convertKilometers = miles * 0.6214;
+
+      document.write(
+        " This Is A Numbers Of Converted  Miles  To Kilometers : " +
+          convertKilometers.toFixed(2) +
+          " km." +
+          "<br/>"
+      );
+      document.write(
+        " This Is A Numbers Of Converted  Kilometers  To Miles: " +
+          convertMiles.toFixed(2) +
+          " mi. " +
+          "<p/>"
+      );
+
+      document.write(" Thank You , Good Bay ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

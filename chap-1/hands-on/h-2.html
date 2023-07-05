@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+     
+      const standardRate = 30;
+
+      document.write(" Welcome To watt Gives Consulting Invoice Program <p/>");
+      const day1Hours = parseInt(
+        prompt(" Enter The  Day- 1 customer Work Hours  ")
+      );
+      const day2Hours = parseInt(
+        prompt(" Enter The  Day- 2  customer  Work Hours  ")
+      );
+      const day3Hours = parseInt(
+        prompt(" Enter The  Day- 3 customer  Work  Hours")
+      );
+
+      const day4Hours = parseInt(
+        prompt(" Enter The  Day- 4 customer Work Hours ")
+      );
+      const day5Hours = parseInt(
+        prompt(" Enter The  Day- 5 customer Work  Hours ")
+      );
+
+      const clientBusinessName = prompt(" Enter Customer Business Name :");
+      const totalWorkHours = count1 + count2 + count3 + count4 + count5;
+      const totalBillAmount = totalWorkHours * standardRate;
+
+      document.write(" Brianna watt Gives Consulting <P/> ");
+      document.write(
+        " Watt Gives Program For: " + clientBusinessName + "<br/>"
+      );
+      document.write(
+        "The Total Number Of Hours Worked   is   :" + totalWorkHours + "<br/>"
+      );
+      document.write(" The Standard Rate Is $:" + standardRate + "<br/>");
+      document.write(
+        "The Total  Amount Bill   is $ : " + totalBillAmount.toFixed(2) + "<p/>"
+      );
+
+      document.write(" Thank You For Using This Program !");
+    </script>
+  </head>
+  <body></body>
+</html>
