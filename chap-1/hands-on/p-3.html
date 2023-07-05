@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // program name : Zach Stern's tile 
+        // purpose : rectangle area and square foot cost 
+
+        // declare variables 
+        // length , width , and cost per square foot : input
+        // area 
+
+        document.write(" Welcome To Zach Stern's Tile ! <p/>");
+
+        const length = parseFloat(prompt(" Enter The length For room :"));
+        const width = parseFloat(prompt(" Enter The width For room :"));
+        const cost = parseInt (prompt(" Enter The Cost Per Square Foot of tile :"));
+
+        const rectangleArea = length * width; 
+        const squareFootCost = rectangleArea / cost;
+
+        document.write(" The Room Area is : " + rectangleArea + "<br/>");
+        document.write(" The Cost Per Square Foot Of Tile Is $ : " + squareFootCost + "<p/>");
+
+        document.write(" Thank You , Good Bay ! ");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
