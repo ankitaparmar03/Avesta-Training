@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+
+        
+      const NUM_HOURS = 4.0;
+
+      document.write(" Welcome Sunshine Books Statistics Program  <p/>");
+      const hour1Customers = parseInt(
+        prompt("Enter # of customers for hour 1 :")
+      );
+      const hour2Customers = parseInt(
+        prompt("Enter # of customers for hour 2 :")
+      );
+
+      const hour3Customers = parseInt(
+        prompt("Enter # of customers for hour 3:")
+      );
+      const hour4Customers = parseInt(
+        prompt("Enter # of customers for hour 4 :")
+      );
+
+    const  totalCustomer =
+        hour1Customers + hour2Customers + hour3Customers + hour4Customers;
+     const avgCustomer = totalCustomer / NUM_HOURS;
+
+      document.write(" The Total Customers is : " + totalCustomer + "<br/>");
+      document.write(
+        " The average Customers/Hours is : " + avgCustomer + "<p/>"
+      );
+
+      document.write("Thank You For Using This Program ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

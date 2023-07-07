@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // quarter: 1,2,3,4
+      // total sales
+      //average sales
+
+      const NUM_YEAR = 4;
+
+      document.write("Welcome To Benet's Auto Sales ! <p/>");
+      const quarter1 = parseFloat(
+        prompt(" Enter the  number of  First quarter  sales :")
+      );
+      const quarter2 = parseFloat(
+        prompt(" Enter the  number of  second quarter  sales :")
+      );
+
+      const quarter3 = parseFloat(
+        prompt(" Enter the  number of  Third quarter  sales :")
+      );
+      const quarter4 = parseFloat(
+        prompt(" Enter the  number of  Forth quarter  sales :")
+      );
+
+      const totalSales = quarter1 + quarter2 + quarter3 + quarter4;
+      const averageSales = totalSales / NUM_YEAR;
+
+      document.write("Bennet's Auto Sales for 2010 <p/>");
+      document.write(
+        " The Total Sales For The Year : $" + totalSales.toFixed(2) + "<br/>"
+      );
+      document.write(
+        " The Average Sales For The Year : $" +
+          averageSales.toFixed(2) +
+          "<br/>"
+      );
+
+      document.write(" Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

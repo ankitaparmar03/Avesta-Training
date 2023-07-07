@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const FED_RATE = 0.15;
+      const STATE_RATE = 0.034;
+      const COUNTY_RATE = 0.011;
+
+      document.write("Welcome To Employee Payroll Calculator !  <p/>");
+
+      const lastName = prompt(" Enter The Employee's Last Name :");
+      const firstName = prompt("Enter The Employee's First Name : ");
+      const hoursWorked = parseFloat(
+        prompt("Enter The Number Of Hours Worked :")
+      );
+      const wageRate = parseFloat(
+        prompt("Enter The Employee's Hourly Wage Rate : ")
+      );
+      const medicalInsurance = parseFloat(
+        prompt("Enter medical insurance deduction :")
+      );
+
+      const grossPay = hoursWorked * wageRate;
+      const federalTexWith = grossPay * FED_RATE;
+      const stateTaxWith = grossPay * STATE_RATE;
+      const countyTaxWith = grossPay * COUNTY_RATE;
+
+      const totalDeduction =
+        federalTexWith + stateTaxWith + countyTaxWith + medicalInsurance;
+      const netPay = grossPay - totalDeduction;
+
+      const fullName = firstName + "  " + lastName;
+
+      document.write("Payroll Information for : " + fullName + "<br/>");
+      document.write("Hours Worked Is  : " + hoursWorked + "<br/>");
+      document.write(
+        "Hourly Wage Rate Is $ : " + wageRate.toFixed(2) + "<br/>"
+      );
+      document.write("Gross Pay Is $ : " + grossPay.toFixed(2) + "<p/>");
+
+      document.write(" WithHoldings =>   <p/>");
+      document.write(
+        " Federal Income Tax Is $ : " + federalTexWith.toFixed(2) + "<br/>"
+      );
+      document.write(
+        " State Income Tax Is $ : " + stateTaxWith.toFixed(2) + "<br/>"
+      );
+      document.write(
+        " County Income Tax Is $ : " + countyTaxWith.toFixed(2) + "<br/>"
+      );
+
+      document.write(
+        " Medical Insurance  Is $ : " + medicalInsurance.toFixed(2) + "<br/>"
+      );
+      document.write(
+        " Total Deduction Is $ : " + totalDeduction.toFixed(2) + "<br/>"
+      );
+      document.write(" Net Pay Is $ : " + netPay.toFixed(2) + "<p/>");
+
+      document.write(" Thank You , Good Bay !.");
+    </script>
+  </head>
+  <body></body>
+</html>

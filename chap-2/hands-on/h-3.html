@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         // rentPay
+         //foodPay
+         //phonePay
+         //groceryPay
+          //total
+          //percentage
+
+          document.write(" MONTHLY BUDGET PROGRAM!  <p/>");
+
+
+          const rentPay = parseFloat(prompt(" Enter Your Monthly Rent Payment :"));
+          const foodPay = parseFloat(prompt(" Enter Your Monthly food Payment :"));
+          
+          const phonePay = parseFloat(prompt(" Enter Your Monthly Phone Payment :"));
+          const groceryPay = parseFloat(prompt(" Enter Your Monthly Grocery Payment :"));
+
+
+          const totalPay = rentPay + foodPay + phonePay  + groceryPay ;
+
+          document.write("MONTHLY  TOTAL AMOUNTS ! <p/>");
+
+          document.write(" Your Monthly Rent Payment Is $:" + rentPay.toFixed(2) + "<br/>");
+          document.write(" Your Monthly Food Payment Is $:" + foodPay.toFixed(2) + "<br/>");
+          
+          document.write(" Your Monthly Phone Payment Is $:" + phonePay.toFixed(2) + "<br/>");
+          document.write(" Your Monthly Grocery Payment Is $:" + groceryPay.toFixed(2) + "<p/>");
+
+
+        const rentPayPercentage =( rentPay * 100 ) / totalPay;
+        const foodPayPercentage =( foodPay * 100 ) / totalPay;
+
+        const phonePayPercentage =( phonePay * 100 ) / totalPay;
+        const groceryPayPercentage =( groceryPay * 100 ) / totalPay;
+
+        document.write("MONTHLY AMOUNT PERCENTAGE! <p/> ");
+
+        
+        
+        document.write(" Your Monthly Rent Payment Percentage Is :" + rentPayPercentage.toFixed(1) +  "%" + "<br/>");
+          document.write(" Your Monthly Food Payment Percentage  Is :" + foodPayPercentage.toFixed(1) + "%" +"<br/>");
+          
+          document.write(" Your Monthly Phone Payment Percentage  Is :" + phonePayPercentage.toFixed(1) + "%" + "<br/>");
+          document.write(" Your Monthly Grocery Payment Percentage  Is :" + groceryPayPercentage.toFixed(1) +  "%" +  "<p/>");
+
+
+          document.write(" THANK YOU , GOOD BAY!.")
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
