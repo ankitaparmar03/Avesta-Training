@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
+      // sales tax = 6//0.06
+      // shipping tax = 2.00
+      // button price = 0.99
 
-        // sales tax = 6//0.06
-        // shipping tax = 2.00
-        // button price = 0.99
+      //name , email address , button number , total button price , sales amount , shipping amount , order total
 
-        //name , email address , button number , total button price , sales amount , shipping amount , order total 
+      document.write(" WELCOME TO BUZZ BUTTON COMPANY  ! <p/>");
 
+      const salesTax = 0.06;
+      const shippingTax = 2.0;
+      const buttonPrice = 0.99;
 
+      const name = prompt(" Enter Your Name . (him / her )");
+      const emailAddress = prompt("Enter your E-mail Address : ");
+      const buttonNumber = parseInt(
+        prompt(" How Many Buttons Ordered To You Enter The Number :")
+      );
 
-        document.write(" WELCOME TO BUZZ BUTTON COMPANY  ! <p/>");
+      const totalButtonPrice = buttonNumber * buttonPrice;
+      const salesTaxAmount = totalButtonPrice * salesTax;
+      const shippingTaxAmount = totalButtonPrice * shippingTax;
 
+      const orderTotal = totalButtonPrice + salesTaxAmount + shippingTaxAmount;
 
-        const salesTax = 0.06;
-        const shippingTax  = 2.00;
-        const buttonPrice = 0.99;
+      document.write(" IT STARTS THE BUZZ !  <P/>");
 
+      document.write(" Your Name Is : " + name + "<br/>");
+      document.write(" Your E-mail Address Is : " + emailAddress + "<br/>");
+      document.write(
+        " Sales Tax Amount Is  :  $  " + salesTaxAmount.toFixed(2) + "<br/>"
+      );
+      document.write(
+        " Shipping Tax Amount Is  :  $  " +
+          shippingTaxAmount.toFixed(2) +
+          "<br/>"
+      );
+      document.write(
+        " Total Order Amount  Is  :  $  " + orderTotal.toFixed(2) + "<p/>"
+      );
 
-        const name = prompt(" Enter Your Name . (him / her )");
-        const emailAddress = prompt("Enter your E-mail Address : ");
-        const buttonNumber = parseInt(prompt(" How Many Buttons Ordered To You Enter The Number :"));
-        
-
-        const totalButtonPrice = buttonNumber * buttonPrice;
-        const salesTaxAmount = totalButtonPrice * salesTax;
-        const shippingTaxAmount = totalButtonPrice * shippingTax;
-
-        const orderTotal = totalButtonPrice + salesTaxAmount + shippingTaxAmount ;
-        
-        
-        document.write(" IT STARTS THE BUZZ !  <P/>");
-
-        document.write(" Your Name Is : " + name + "<br/>");
-        document.write(" Your E-mail Address Is : " + emailAddress + "<br/>");
-        document.write(" Sales Tax Amount Is  :  $  " +salesTaxAmount.toFixed(2) + "<br/>");
-        document.write(" Shipping Tax Amount Is  :  $  " +shippingTaxAmount.toFixed(2) + "<br/>");
-        document.write(" Total Order Amount  Is  :  $  " +orderTotal.toFixed(2) + "<p/>");
-
-
-
-        document.write(" THANK YOU, HAVE A GOOD DAY !. ");
-
-
-
+      document.write(" THANK YOU, HAVE A GOOD DAY !. ");
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>

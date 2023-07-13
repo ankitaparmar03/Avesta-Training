@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class MenuItem {
+        constructor(Name, category, Price) {
+          this.itemName = Name;
+          this.category = category;
+          this.itemPrice = Price;
+        }
+
+        displayInfo() {
+          document.write(
+            " Item Name Is  : " +
+              this.itemName +
+              "  <br/> " +
+              "Category  :  " +
+              this.category +
+              " <br/> " +
+              "Price Of Item   : $ " +
+              this.itemPrice +
+              "<p/>"
+          );
+        }
+      }
+
+      document.write(" Welcome To the Menu Maker ! <p/>");
+      const Pastrami = new MenuItem("Pastrami ", "Sandwich", 4.95);
+      const Ham = new MenuItem("Ham", "Sandwich", 5.25);
+      const Milkshake = new MenuItem("Milk shake ", "Drink", 2.95);
+      const SoftDrink = new MenuItem("Soft Drink ", "Drink", 1.49);
+
+      Pastrami.displayInfo();
+      Ham.displayInfo();
+      Milkshake.displayInfo();
+      SoftDrink.displayInfo();
+
+      document.write(" Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-
     <script>
-     document.write(" Welcome ! <p/>");
+      document.write(" Welcome ! <p/>");
+      let maximumSale;
 
+      const saleAmount1 = parseFloat(prompt("Enter the first sale Amount : "));
+      const saleAmount2 = parseFloat(
+        prompt("Enter the second  sale Amount : ")
+      );
+      const saleAmount3 = parseFloat(prompt("Enter the third sale Amount : "));
 
-         const salesAmount1 =parseFloat( prompt("Enter the first sale Amount"));
-         const salesAmount2 =parseFloat( prompt("Enter the second  sale Amount"));
-         const salesAmount3 =parseFloat( prompt("Enter the third sale Amount"));
+      maximumSale = Math.max(saleAmount1, Math.max(saleAmount2, saleAmount3));
 
-
-      const maxSalesAmount = Math.max(salesAmount1 , salesAmount2 , salesAmount3);
-      document.write(" Maximum Sales Amount Is : $ "+ maxSalesAmount + "<p/>" );
-
+      document.write(" The maximum Sales Amount Is : $ " + "<p/>");
 
       document.write(" Thank You ! ");
-
-
-
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
