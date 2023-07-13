@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+         document.write(" Welcome To The Sales Management Program  ! <p/>");
+
+
+        const SalesFor2011 = parseFloat(prompt("Enter The Number Of Sales For 2011 :"));
+        const SalesFor2010 = parseFloat(prompt("Enter The Number Of Sales For 2010 :"));
+
+        const  difference = SalesFor2011 - SalesFor2010;
+
+        const percentage = (difference / SalesFor2010) * 100;
+       
+
+        document.write("Sales for 2011 is : $  " + SalesFor2011 + "<br/>");
+        document.write("Sales for 2010 is : $  " + SalesFor2010 + "<br/>");
+        
+        document.write("Sales difference  : $  " + difference + "<br/>");
+        document.write("Sales Percentage  For 2010 : $  " + percentage.toFixed(2)+  " % " + "<p/>");
+ 
+          document.write(" Thank You ! ");
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

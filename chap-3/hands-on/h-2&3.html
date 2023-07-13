@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write(" Welcome to Electronics Appliance!  <p/> ");
+      class Television {
+        constructor(manufacturer, size, price) {
+          this.manufacturer = manufacturer;
+          this.screenSize = size;
+          this.retailPrice = price;
+        }
+        setPrice(newPrice) {
+          this.retailPrice = newPrice;
+        }
+
+        displayInfo() {
+          document.write(
+            " Television ManuFacturer Is  :" + this.manufacturer + "<br/>"
+          );
+          document.write(
+            " Television Screen Size  Is : " + this.screenSize + " <br/>"
+          );
+          document.write(
+            " Television Retail Price  Is :  $ " + this.retailPrice + " <p/>"
+          );
+        }
+      }
+      const television = new Television("Sony", 52, 1900.99);
+      television.displayInfo();
+
+      television.setPrice(900);
+      television.displayInfo();
+
+      document.write(" Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

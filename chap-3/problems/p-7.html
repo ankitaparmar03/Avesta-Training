@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let nextColor = "";
+
+      function setColor(newColor) {
+        newColor = newColor;
+      }
+
+      function changeColor() {
+        document.body.bgColor = nextColor;
+      }
+      function displayName() {
+        let firstName = document.ColorAndText.firstName.value;
+        let lastName = document.ColorAndText.lastName.value;
+        document.ColorAndText.fullName.value = firstName + " " + lastName;
+      }
+    </script>
+  </head>
+  <body bgcolor="White">
+    <form name="ColorAndText" action="">
+      <!-- three radio buttons to set the color-->
+
+      <input
+        type="radio"
+        name="colors"
+        value="Azure"
+        onclick="setColor(this.value)"
+      />
+      Azure<br />
+      <input
+        type="radio"
+        name="colors "
+        value="LightYellow"
+        onclick="setColor(this.value)"
+      />
+      Light Yellow <br />
+      <input
+        type="radio"
+        name="colors"
+        value="Cornsilk"
+        onclick="setColor(this.value)"
+      />
+      Cornsilk <br />
+
+      <!-- a button to change the color-->
+      <input
+        type="button"
+        name="changeButton "
+        value="Change Color"
+        onclick="changeColor()"
+      />
+      <p />
+
+      <!-- text boxes for first and last name -->
+
+      <input
+        type="text"
+        name="firstName"
+        value="First Name :"
+        size="80"
+      /><br />
+      <input type="text" name="lastName" value="Last Name : " size="80" /><br />
+
+      <!-- text box and button to display full name-->
+      <input type="text" name="fullName" readonly="true" size="80" /><br />
+      <input
+        type="button"
+        name="displayButton"
+        value="Display Name"
+        onclick="displayName()"
+      /><br />
+    </form>
+  </body>
+</html>

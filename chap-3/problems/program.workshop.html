@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let songTitle;
+      let creditCardType;
+      let SONG_PRICE = 0.99;
+      let NL = "\n";
+
+      function setType(ccType) {
+        creditCardType = ccType;
+      }
+
+      function displayOrder() {
+        let firstName = document.OrderForm.firstName.value;
+        let lastName = document.OrderForm.lastName.value;
+        let e_mail = document.OrderForm.e_mail.value;
+        let songTitle = document.OrderForm.songChoice.value;
+
+        document.OrderForm.fullOrder.value =
+          "HERE IS YOUR ORDER : " +
+          NL +
+          NL +
+          "TITLE : " +
+          songTitle +
+          NL +
+          "YOUR NAME : " +
+          firstName +
+          " " +
+          lastName +
+          NL +
+          " YOUR EMAIL ADDRESS : " +
+          e_mail +
+          NL +
+          "CREDIT CARD : " +
+          creditCardType +
+          NL +
+          "AMOUNT CHARGED TO CARD : $ " +
+          SONG_PRICE.toFixed(2) +
+          NL +
+          NL +
+          "Thank You For Placing your Order ! ";
+      }
+    </script>
+  </head>
+
+  <!-- Set backGround color , display heading, name form -->
+  <body bgcolor="Azure">
+    <h2>Music Delivered Order From</h2>
+    <form name="OrderForm" action="">
+      <!-- Create Drop-Down List Fir Song Selection -->
+      <strong>Select Your Song :</strong><br />
+
+      <select name="songChoice">
+        <option value="She Loves You(Beatles)">
+          The Beatles : She Loves You
+        </option>
+        <option value="Ruby Tuesday(Rolling Stones)">
+          The Rolling Stones : Ruby Tuesday
+        </option>
+        <option value="My Generation(The Who)">The Who : My Generation</option>
+        <option value="Light My Fire(The Doors)">
+          The Doors : Light My Fire
+        </option>
+        <option value="Somebody To Love(jefferson Airplane)">
+          jefferson Airplane : Somebody To Love
+        </option>
+        :
+      </select>
+      <p />
+
+      <!-- Create Radio buttons  for credit card type -->
+      <strong> Select Your Credit Card Type :</strong><br />
+      <input
+        type="radio"
+        name="creditCard"
+        value="MasterCard"
+        onclick="setType(this.value)"
+      />MasterCard<br />
+      <input
+        type="radio"
+        name="creditCard"
+        value="Visa"
+        onclick="setType(this.value)"
+      />Visa<br />
+      <input
+        type="radio"
+        name="creditCard"
+        value="Discover"
+        onclick="setType(this.value)"
+      />Discover<br />
+      <input
+        type="radio"
+        name="creditCard"
+        value="American"
+        onclick="setType(this.value)"
+      />American<br />
+      Express
+      <p />
+
+      <!--Create text boxes fir user information -->
+      <strong> Enter Your Name And E_mail Address: </strong><br />
+      <input
+        type="text"
+        name="firstName"
+        placeholder="First Name"
+        size="80"
+      /><br />
+      <input
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        size="80"
+      /><br />
+      <input type="text" name="e_mail" placeholder="E_mail Address" size="80" />
+      <p />
+
+      <!-- Create display button and multiline text  box for information -->
+      <input
+        type="button"
+        name=" displayButton"
+        value="Display Order"
+        onclick="displayOrder()"
+      /><br />
+      <textarea
+        name="fullOrder"
+        readonly="true"
+        value=""
+        rows=" 8"
+        cols="50"
+      ></textarea>
+    </form>
+  </body>
+</html>

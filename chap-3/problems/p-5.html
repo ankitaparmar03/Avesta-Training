@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let sqRoot;
+      let absolute;
+      let nextHighest;
+      let nextLowest;
+      let higherNum;
+      let lowerNum;
+
+      document.write(" WELCOME TO THE MATH METHODS PROGRAM . <p/>");
+      document.write(
+        " This Program Asks For A  Decimal Number And Calculates The Square Root.   <br/>"
+      );
+
+      document.write(
+        " Absolute Value , And The next Highest And lowest Whole Number.   <br/>"
+      );
+      document.write(
+        " It Then Asks For A Second Number And Calculates the Higher  And Lower Of The Two Numbers . <p/>"
+      );
+
+      const someNum1 = parseFloat(prompt("Enter A Number :"));
+      sqRoot = Math.sqrt(someNum1);
+      absolute = Math.abs(someNum1);
+      nextHighest = Math.ceil(someNum1);
+      nextLowest = Math.floor(someNum1);
+
+      document.write(
+        "The Square Root  Number Is : " + sqRoot.toFixed(2) + "<br/>"
+      );
+      document.write(
+        "The  absolute Number Is : " + absolute.toFixed(2) + "<br/>"
+      );
+
+      document.write(
+        "The Next Highest  Number Is : " + nextHighest.toFixed(2) + "<br/>"
+      );
+      document.write(
+        "The  Next Lowest Number Is : " + nextLowest.toFixed(2) + "<p/>"
+      );
+
+      const num2 = parseFloat(prompt(" Enter The Number :"));
+
+      higherNum = Math.max(someNum1, num2);
+      lowerNum = Math.min(someNum1, num2);
+
+      document.write(" Higher  Of The Two Numbers " + higherNum + "<br/>");
+      document.write(" Lower  Of The Two Numbers " + lowerNum + "<p/>");
+
+      document.write(" Thank You For Using This Program ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Account {
+        constructor(type, num, lName, fName, balance) {
+          this.accountType = type;
+          this.accountNumber = num;
+          this.lastName = lName;
+          this.firstName = fName;
+          this.accountBalance = balance;
+        }
+      }
+
+      document.write(
+        "Account Program  ." +
+          " <br/>" +
+          " This Program Creates An Account. <p/>"
+      );
+
+      let mySavingsAcct = new Account("S", 1376433, "Dunes", "Sid", 80.0);
+      document.write("Thank You !");
+    </script>
+  </head>
+  <body></body>
+</html>

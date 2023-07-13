@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        document.write(" Welcome To The Interest Calculator !  <p/>");
+
+        const balance = parseFloat(prompt(" Enter The Beginning Balance : "));
+        const interestRate = parseFloat(prompt(" Enter The Annual Interest Rate As A Decimal (Ex. 5% is .05:)"));
+
+
+        const interest = balance * interestRate;
+        const newBalance = balance + interest;
+
+        document.write(" Your Beginning Balance  Is  :$ " + balance + "<br/>");
+        document.write(" Interest For The Year Is  : $" + interest + "<br/>");
+        document.write(" Your New Balance  Is :$ " + newBalance.toFixed(2) + "<p/>");
+
+        document.write(" Thank You !. ");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

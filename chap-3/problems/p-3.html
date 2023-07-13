@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Account {
+        constructor(
+          type,
+          num,
+          lName,
+          fName,
+          balance,
+          deposit,
+          withdraw,
+          changeName,
+          inquire,
+          displayInfo
+        ) {
+          this.accountType = type;
+          this.accountNumber = num;
+          this.lastName = lName;
+          this.firstName = fName;
+          this.acctBalance = balance;
+        }
+
+        deposit(Amount) {
+          this.acctBalance = this.acctBalance + Amount;
+          document.write(
+            "After Enter Deposit  Naw Balance Is : $" +
+              this.acctBalance +
+              "<p/>"
+          );
+        }
+
+        withdraw(Amount) {
+          this.acctBalance = this.acctBalance - Amount;
+          document.write(
+            "After Withdraw Current Balance Is : $" +
+              this.acctBalance +
+              " <br/>"
+          );
+        }
+
+        changeName(lastName, firstName) {
+          this.lastName = lName;
+          this.firstName = fName;
+          document.write(
+            "The Name Has Been Changed To " +
+              this.firstName +
+              " " +
+              this.lastName +
+              " <br/>"
+          );
+        }
+
+        inquire() {
+          return this.acctBalance;
+        }
+
+        displayInfo() {
+          document.write(
+            "  The Account Number Is # : " + this.accountNumber + "<br/>"
+          );
+          document.write(" Account Type Is : " + this.accountType + "<br/>");
+          document.write(
+            " Owner's Name Is : " +
+              this.lastName +
+              " " +
+              this.firstName +
+              "<br/>"
+          );
+          document.write(" Current Balance is  : " + this.acctBalance + "<p/>");
+        }
+      }
+      document.write(" This Program Creates An Account <br/>");
+      document.write("It Also Modifies The Account With Class Methods . <p/>");
+
+      let mySavingsAcct = new Account("S", 1376433, "Dunes", "Sid", 80.0);
+      mySavingsAcct.displayInfo();
+      mySavingsAcct.withdraw(50.0);
+      mySavingsAcct.deposit(100.0);
+      mySavingsAcct.inquire();
+
+      document.write(" Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

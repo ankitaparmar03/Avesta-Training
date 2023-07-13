@@ -1,0 +1,45 @@
+ 
+ 
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body
+
+bgcolor = "White">
+<script>
+
+    
+    function display(){
+       let name = document.DisplayMessage.name.value;
+       let flower = document.DisplayMessage.flower.value;
+        
+       document.DisplayMessage.DisplayInfo.value =   "Hello, Dear " + name + "\n " + " You Selected Flower  : " + flower + "\n" +   " Thank You For Your Inquiry "  ;
+    }
+    
+
+
+</script>
+  
+    <form name = "DisplayMessage" action="">
+        <strong > Please Enter Your Name : </strong><br/>
+
+        name <input type = "text" name = "name"   placeholder=" Name"  size = " 40"/><p/> 
+        
+        <strong> Select Flower </strong> <br/>
+
+        <input type = "radio" name = "flower" value = "Rose"  /> Rose<br/>
+        <input type = "radio" name = "flower" value = "Carnations"  /> Carnations<br/>
+        <input type = "radio" name = "flower" value = "Daisies"  /> Daisies<p/>
+
+
+        <input type = "button" name = "Info Button" value = " Requested Info " onclick="display()" /><br/>
+        <textarea name = "DisplayInfo" readonly = "true" value ="" rows = "6" cols = " 40 "></textarea>
+
+        
+</body>
+</html>
