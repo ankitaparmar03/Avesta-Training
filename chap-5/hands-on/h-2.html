@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+let tax;
+
+        document.write(" Welcome  sales Tax Information ! <p/>");
+
+        const cents = parseInt(prompt("Enter The Number Of Cents : "));
+
+        if(cents >0 && cents <= 7){
+            document.write(" No Tax  <br/>");
+            document.write(" Total tex Amount Is " + cents + "<p/>");
+        }
+        else
+        if(cents >8 && cents <= 21){
+            tax = cents + 1;
+            document.write("  Cents Is :  " + cents + " <br/> " +  " Sales Tax  Is  : 1  <br/> " + " So Total Amount Is : $ " + tax  +"<p/>")
+        }
+        else
+        if(cents >22 && cents <=35 ){
+          tax=  cents + 2;
+          document.write(" cents Is : " + cents + " <br/> " +" Sales Tax  Is  : 2  <br/>" + "So Total Amount Is  : $ " + tax  +"<p/>")
+        }
+        else
+        if( cents >36  && cents <= 49){
+            
+          tax=  cents + 3;
+          document.write(" cents Is : " + cents + " <br/> " +" Sales Tax  Is  : 3  <br/>" + "So Total Amount Is  : $ " + tax  +"<p/>")
+        }
+        else
+        if( cents >50  && cents <= 64){
+            
+          tax=  cents + 4;
+          document.write(" cents Is : " + cents + " <br/> " +" Sales Tax  Is  : 4  <br/>" + "So Total Amount Is  : $ " + tax  +"<p/>")
+        }
+        
+        else
+        if( cents >65  && cents <= 78){
+            
+          tax=  cents + 5;
+          document.write(" cents Is : " + cents + " <br/> " +" Sales Tax  Is  : 5  <br/>" + "So Total Amount Is  : $ " + tax  +"<p/>")
+        }
+        
+        else
+        if( cents >79  && cents <= 92){
+            
+          tax=  cents + 6;
+          document.write(" cents Is : " + cents + " <br/> " +" Sales Tax  Is  : 6  <br/>" + "So Total Amount Is  : $ " + tax  +"<p/>")
+        }
+        
+        else
+        if( cents >93  && cents <= 99){
+            
+          tax=  cents + 7;
+          document.write(" cents Is : " + cents + " <br/> " +" Sales Tax  Is  : 7  <br/>" + "So Total Amount Is  : $ " + tax  +"<p/>")
+        }
+        else{
+            document.write(" This Is A Error . <p/>")
+        }
+
+        document.write(" Thank You ! ");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

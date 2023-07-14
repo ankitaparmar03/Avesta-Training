@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+class MovieOrder{
+ 
+    constructor(name , delivery){
+        this.movieName = name;
+        if(delivery == "S"){
+            this. moviePrice = 3.99;
+        }
+        else{
+           this.moviePrice = 4.99;
+        }
+    }
+    displayInfo(){
+        document.write("Movie Name :   " + this.movieName + "<br/>");
+        document.write("Movie Price  : $  " + this.moviePrice + "<p/>");
+    }
+}
+
+
+
+
+let movie ;
+let choice;
+let deliveryType;
+
+document.write(" Welcome To MovieStream !  <p/>");
+
+
+choice = prompt(" Enter 1 To Order STAR WARS , 2 For E.T. , 3 For RAIDERS OF THE LOST ARK : ");
+
+if(choice == 1 ){
+    movie = "STAR WARS ";
+}
+else
+if(choice == 2){
+    movie = "E.T.";
+}
+else
+if(choice == 3){
+    movie = "RAIDERS OF THE LOST ARK ";
+}
+else{
+    movie = "";
+    document.write(" Invalid Choice <br/>");
+}
+
+
+deliveryType = prompt(" Enter S for Stream Movie  or D for to Download : ");
+let myOrder = new MovieOrder(movie , deliveryType);
+myOrder.displayInfo();
+
+document.write("Thank You ! ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

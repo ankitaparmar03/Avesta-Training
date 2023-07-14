@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        document.write(" Welcome  Grade Percentage !  <p/>");
+
+
+        const name = prompt(" Enter Your Name : ");
+
+        const std = prompt(" Enter Your Standard : ");
+
+        const GradePercentage  = parseFloat(prompt(" Enter You percentage : "));
+
+
+
+        if(GradePercentage >= 90){
+            letterGrade = " A ";
+            
+        }
+        else 
+        if(GradePercentage >= 80){
+            letterGrade = " B ";
+        }
+        else
+        if(GradePercentage >= 70){
+            letterGrade = " C ";
+        }
+        else
+        if(GradePercentage >= 60){
+            letterGrade = " D ";
+        }
+        else{
+            letterGrade = " Fail ";
+        }
+
+        document.write(" Student Name Is : " + name +  " <br/>" + " Standard : " + std + "<br/> " + " Student percentage Is : " +  GradePercentage +  " % "+ "<br/>");
+        
+        document.write(" Student Grade Is : " + letterGrade + " <p/>");
+
+
+        document.write(" Thank You ! ")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

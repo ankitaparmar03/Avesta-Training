@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+      let grossPay;
+      let overTimeHours;
+      let overTimePay;
+      let regularPay;
+
+          document.write("Welcome To The Over Time Calculator !  <p/>");
+
+
+          const hoursWorked = (parseFloat(prompt(" Enter The Number Of Hours Worked : ")));
+          const wageRate = parseFloat(prompt(" Enter The Wage Rate  : "));
+
+          if(hoursWorked > 40){
+            overTimeHours = hoursWorked - 40;
+            overTimePay = overTimeHours * wageRate * 1.5;
+            regularPay = 40 * wageRate;
+            grossPay = regularPay + overTimePay
+          }
+          else{
+            grossPay = hoursWorked * wageRate
+          }
+
+          document.write(" The Hourly Worked Gross Payment Is : $ " + grossPay.toFixed(2) + "<p/>")
+
+          document.write(" Thank You ! ");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

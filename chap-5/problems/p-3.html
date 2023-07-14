@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+let pkgPrice;
+let shipCost;
+        document.write(" WELCOME TO BULK BEST ! <p/> ");
+
+        const fName = prompt(" Enter your First Name : ");
+        const lName = prompt(" Enter Your Last Name : ");
+        const numPkgs = parseInt (prompt(" Enter the Number Of Packages : "));
+        const state = prompt(" Enter The State To Ship To : ");
+
+
+        const customerName = fName + " " + lName ;
+        if(numPkgs >= 6){
+             pkgPrice = 2.00;
+        }
+        else{
+            pkgPrice = 2.50;
+        }
+        if(state == "ID"){
+            shipCost = 0.00;
+        }
+        else{
+            shipCost = 4.00;
+        }
+
+        const totPkgCost = pkgPrice * numPkgs;
+        const totOrderCost = totPkgCost + shipCost;
+         
+        document.write(" Order Summary For " + customerName + "<br/>");
+        document.write(" Number Of Packages Ordered : " + numPkgs + "<br/>");
+        document.write("  Ordered Will Be Shipped  To  :   " + state+ "<br/>");
+        document.write(" Price Per Packages : $ " + pkgPrice.toFixed(2) + "<br/>");
+        
+        document.write(" SubTotal Is : $  " + totPkgCost.toFixed(2) + "<br/>");
+        
+        document.write(" Shipping Cost Is : $  " + shipCost.toFixed(2) + "<br/>");
+        document.write(" Order Total : $  " + totOrderCost.toFixed(2) + "<p/>");
+
+        document.write(" Thank You ! ");
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
