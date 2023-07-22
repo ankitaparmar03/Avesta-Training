@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome To Temperature Variation Program . <p/>");
+
+      let totalTemperature = 0;
+      let maxTemperature = 0;
+      let minTemperature = 0;
+
+      for (let day = 0; day < 5; day++) {
+        let dayTemperature = parseFloat(prompt("Enter The Temperature " + day));
+
+        if (day === 0) {
+          maxTemperature = dayTemperature;
+          minTemperature = dayTemperature;
+        }
+
+        if (dayTemperature > maxTemperature) {
+          maxTemperature = dayTemperature;
+        }
+        if (dayTemperature < minTemperature) {
+          minTemperature = dayTemperature;
+        }
+
+        totalTemperature += dayTemperature;
+      }
+
+      const average = totalTemperature / 5;
+
+      document.write(
+        "The Highest Temperature Is : " + maxTemperature + "<br/>"
+      );
+      document.write("The Lowest Temperature Is : " + minTemperature + "<br/>");
+      document.write(
+        " Average Temperature Is : " + average.toFixed(1) + "<p/>"
+      );
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

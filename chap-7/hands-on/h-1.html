@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let studentSatScore;
+      let parentAlumnus;
+      let familyIncome;
+
+      document.write("Welcome To Upper Crust Collage Admission Program . <p/>");
+
+      studentSatScore = parseInt(prompt("Enter Student's Sat Score :"));
+      parentAlumnus = parseInt(
+        prompt("Please enter Alumnus Status At least One Parent : ")
+      );
+      familyIncome = parseInt(prompt("Enter Your Family  Income : "));
+
+      if (studentSatScore >= 1400) {
+        document.write("Student Is Excepted For Collage . <p/>");
+        document.write("Student  Get Scholarship. <p/>");
+      } else if (studentSatScore >= 1200) {
+        if (parentAlumnus >= 1) {
+          document.write("Student Is Excepted For Collage . <p/>");
+          document.write("Student  Get Scholarship. <p/>");
+        }
+        if (familyIncome >= 100000) {
+          document.write("Student Is Excepted For Collage . <p/>");
+        }
+      }
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

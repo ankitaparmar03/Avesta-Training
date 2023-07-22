@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let numCans;
+      let totalCans = 0;
+
+      document.write("Welcome To Canned Food Donation Program . <p/>");
+      numCans = parseInt(prompt("Enter the Number # Of Cans  (-1 to Quit ): "));
+
+      while (numCans != -1) {
+        totalCans = totalCans + numCans;
+        document.write("Total Cans So Far : " + totalCans + "<br/>");
+        numCans = parseInt(
+          prompt("Enter the Number # Of Cans  (-1 to Quit ): ")
+        );
+      }
+
+      document.write("Total # Of Cans Donated : " + totalCans + "<p/>");
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

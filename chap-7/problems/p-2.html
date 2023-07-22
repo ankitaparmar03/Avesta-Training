@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let shippingCost;
+
+      const DISC_PRICE = 4.98;
+      const BOOM_PRICE = 3.98;
+      const REG_PRICE = 5.0;
+
+      document.write(" Welcome To Not Quite Free Throw Sale  . <br/>");
+      document.write(" We Are Ready To Take Your Order   . <p/>");
+
+      const numDisc = parseFloat(
+        prompt("How many flying discs do  you want? : ")
+      );
+
+      const numBooms = parseFloat(
+        prompt("How many boomerangs do you want?  : ")
+      );
+
+      const totalPurchase = numDisc * DISC_PRICE + numBooms * BOOM_PRICE;
+
+      if ((numDisc >= 1 && numBooms >= 1) || numDisc >= 3 || numBooms >= 3) {
+        shippingCost = 0.0;
+        document.write("Congratulations ! Shipping is free! <br/> ");
+      } else {
+        shippingCost = REG_SHIP;
+      }
+
+      const totalOrder = totalPurchase + shippingCost;
+
+      document.write(
+        "Total Purchase Amount is : $  " + totalPurchase.toFixed(2) + "<br/>"
+      );
+      document.write(
+        "Shipping Cost is :  $ " + shippingCost.toFixed(2) + "<br/>"
+      );
+      document.write("Total Order is : $  " + totalOrder.toFixed(2) + "<p/>");
+
+      document.write("Thank You  !    ");
+    </script>
+  </head>
+  <body></body>
+</html>

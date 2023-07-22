@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("welcome student Percentage Program ! <p/>");
+
+      const name = prompt("Enter Student Name : ");
+      const studentClassName = prompt(
+        "Enter Student Class Number ( like 10th) :"
+      );
+
+      document.write("Student Name Is : " + name + "<br/>");
+      document.write("Student Class Name Is : " + studentClassName + "<br/>");
+
+      const studentAbsence = parseInt(prompt("Enter Your Absence : "));
+
+      if (studentAbsence > 5) {
+        document.write(" You Are Failed (Because Of Absence ) . <br/>");
+      } else {
+        let studentPercentage = prompt("Enter Your Percentage : ");
+        studentPercentage = parseFloat(studentPercentage);
+
+        if (studentAbsence <= 2) {
+          document.write(
+            " Add 3 %  Percentage Because Of Fewer Absence  . " +
+              studentPercentage.toFixed(2) +
+              " % " +
+              " <br/>"
+          );
+          studentPercentage = studentPercentage + 3;
+          document.write(
+            " Student Percentage Is : " +
+              studentPercentage.toFixed(2) +
+              " % " +
+              "<br/>"
+          );
+        }
+        if (studentPercentage >= 90 && studentPercentage <= 100) {
+          document.write(" Get A Grade     <p/>");
+        } else if (studentPercentage >= 80 && studentPercentage <= 89.9) {
+          document.write(" Get B Grade   <p/>");
+        }
+        if (studentPercentage >= 70 && studentPercentage <= 79.9) {
+          document.write(" Get C Grade    <p/>");
+        } else if (studentPercentage >= 60 && studentPercentage <= 69.9) {
+          document.write(" Get D Grade <p/>");
+        } else if (studentPercentage <= 60) {
+          document.write(" Get F (Failed) Grade  <p/>");
+        }
+      }
+
+      document.write("Thank You !  . ");
+    </script>
+  </head>
+  <body></body>
+</html>

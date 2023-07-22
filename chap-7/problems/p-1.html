@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write(" WELCOME TO LOGICAL OPERATORS !  <p/>");
+
+      let num1;
+      let num2;
+
+      num1 = parseInt(prompt(" Please Enter The First Number : "));
+      num2 = parseInt(prompt(" Please Enter The Second Number : "));
+
+      document.write("AND :     ");
+
+      if (num1 > 100 && num2 > 100) {
+        document.write(" Both Numbers Are Grater Than 100 .   <br/>");
+      } else {
+        document.write(
+          " At Least One Number Is Less Than Or Equal To 100 . <br/> "
+        );
+      }
+
+      document.write("  OR :    ");
+
+      if (num1 > 100 || num2 > 100) {
+        document.write(" One Number Is Greater Than 100 .  <br/>");
+      } else {
+        document.write("Neither Number Is Greater Than 100 . <br/>");
+      }
+
+      document.write("NOT :    ");
+
+      if (!(num1 > 100 || num2 > 100)) {
+        document.write("Neither Number Is Greater Than 100 .   <br/>");
+      } else {
+        document.write(" At Least One Number Is Greater Than 100 .  <p/>");
+      }
+
+      document.write("THANK YOU ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

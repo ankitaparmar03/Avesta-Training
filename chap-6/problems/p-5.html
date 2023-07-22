@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class QuickTunesCustomer {
+        static newTotalCustomer = 0;
+        static newCustomerNum = 1;
+        constructor(lName, fName, strAddr, city, state, zip) {
+          this.customerLastName = lName;
+          this.customerFirstName = fName;
+
+          this.customerName = lName + " " + fName;
+          this.customerStreetAddr = strAddr;
+          this.customerCity = city;
+          this.customerState = state;
+          this.customerZip = zip;
+          this.customerNumber = QuickTunesCustomer.newCustomerNum;
+          QuickTunesCustomer.newCustomerNum++;
+          this.totalCustomer = QuickTunesCustomer.newTotalCustomer
+          QuickTunesCustomer.newTotalCustomer++;
+        }
+
+        static setCustomerNum(startNum) {
+          this.newCustomerNum = startNum;
+        }
+        displayInfo() {
+          document.write("Customer #   :    "  + this.customerNumber + "<br/>");
+          document.write("Name   :   "  + this.customerName + "<br/>");
+          document.write("Address  :   "  + this.customerStreetAddr + "<br/>");
+          document.write(
+            "City   , State   , Zip   : " +
+              this.customerCity +
+              "   ,  " +
+              this.customerState +
+              "     and    "    +
+              this.customerZip +
+              "<p/>"
+          );
+        }
+      }
+
+      
+      
+
+      document.write("QuickTunes New Customer  Program ! <p/>");
+
+       const startNum =parseFloat( prompt("Enter # Starting Customer Number : "));
+      
+      QuickTunesCustomer.setCustomerNum(startNum);
+
+       
+
+       let lastName = prompt("Enter Last Name or Q for Quit .");
+
+      while (lastName != "Q") {
+       const  firstName = prompt("Enter Customer's First Name : ");
+       const  address = prompt("Enter Customer's Street Address  : ");
+       const city = prompt("Enter Customer's City : ");
+       const state = prompt("Enter Customer's State: ");
+       const zip = prompt("Enter Customer's Zip Code : ");
+
+        const newCustomer = new QuickTunesCustomer(
+          lastName,
+          firstName,
+          address,
+          city,
+          state,
+          zip
+        );
+        newCustomer.displayInfo();
+        lastName = prompt("Enter Last Name or Q to Quit .");
+      }
+
+      document.write(
+        " # Of Customers Added : " + QuickTunesCustomer.newTotalCustomer+ "<p/>"
+      );
+      document.write(" Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome To Mack's Coffee Cove . <p/>");
+
+      let morningCategoryCard = 0;
+      let noonCategoryCard = 0;
+      let eveningCategoryCard = 0;
+      let total = 0;
+
+      let category = prompt(
+        "Select Category Morning For  M , Noon For N , Evening For E Or Q For Exit This Program :"
+      );
+      while (category != "Q") {
+        let cardNum = parseInt(prompt("Enter The Card Number : "));
+
+        if (category == "M") {
+          morningCategoryCard += cardNum;
+        }
+        if (category == "N") {
+          noonCategoryCard += cardNum;
+        }
+        if (category == "E") {
+          eveningCategoryCard += cardNum;
+        }
+        category = prompt(
+          "Select Category Morning For  M , Noon For N , Evening For E Or Q For Exit This Program :"
+        );
+      }
+
+      total = morningCategoryCard + noonCategoryCard + eveningCategoryCard;
+
+      document.write(
+        " Morning Category Cards  : " + morningCategoryCard + "<br/>"
+      );
+      document.write(" Noon Category Cards  : " + noonCategoryCard + "<br/>");
+      document.write(
+        " Evening Category Cards  : " + eveningCategoryCard + "<br/>"
+      );
+
+      document.write("Total Cards  : " + total + "<p/>");
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

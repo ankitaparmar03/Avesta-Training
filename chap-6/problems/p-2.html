@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let numStudents;
+      let studentName;
+      let index;
+
+      document.write("Welcome To Student Name Entry Program . !  <p/>");
+
+      numStudents = prompt("Enter The Number Of Student Names To Add :  ");
+
+      for (index = 1; index <= numStudents; index++) {
+        studentName = prompt("Enter The Name Of Student # " + index);
+
+        document.write(" This Student Name Is : " + studentName + "<p/>");
+      }
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>
