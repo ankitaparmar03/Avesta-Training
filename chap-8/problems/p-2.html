@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function double(someNum) {
+        const result = someNum * 2;
+        document.write("You Entered Number : " + someNum + "<br/>");
+        document.write("Your Number Doubled Is :  " + result + "<p/>");
+      }
+
+      document.write("Welcome To The Number Doubler !  <p/>");
+      const someNum = parseFloat(
+        prompt("Enter The  Number You Want To Double : ")
+      );
+      double(someNum);
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

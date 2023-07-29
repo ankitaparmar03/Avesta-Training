@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class ShoeRental {
+        constructor(
+          shoeId,
+          shoeSize,
+          firstName,
+          lastName,
+          rentalDate,
+          rentalTime,
+          numGames
+        ) {
+          this.shoeId = prompt("Enter The Shoe Id Number : ");
+          this.shoeSize = prompt("Enter The Shoe Size : ");
+          this.firstName = prompt("Enter renter's First Name : ");
+          this.lastName = prompt("Enter renter's last Name :");
+          this.rentalDate = prompt("Enter Date (MM / DD / YYYY) : ");
+          this.rentalTime = prompt("Enter Time (HH : MM :) : ");
+          this.numGames = parseInt(
+            prompt("How Many Games Is Renter Bowling ? ")
+          );
+          this.rentalCost = this.computeRentalCost(numGames);
+        }
+
+        computeRentalCost(numGames) {
+          const COST_PER_GAME = 2;
+          const cost = this.numGames * COST_PER_GAME;
+          return cost;
+        }
+
+        displayInfo() {
+          document.write(
+            "Renter's Name : " + this.firstName + "  " + this.lastName + "<br/>"
+          );
+          document.write("Shoe Id : " + this.shoeId + "<br/>");
+          document.write("Shoe Size : " + this.shoeSize + "<br/>");
+          document.write("Rental Date  : " + this.rentalDate + "<br/>");
+          document.write("Rental Time : " + this.rentalTime + "<br/>");
+          document.write("Number Of Games Bowled : " + this.numGames + "<br/>");
+          document.write("Cost Of Rental  : $ " + this.rentalCost + "<p/>");
+        }
+      }
+
+      document.write("Welcome To Lanes Galore Shoe  Rentals  ! <p/>");
+
+      const nextCustomer = new ShoeRental();
+      nextCustomer.displayInfo();
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

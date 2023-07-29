@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function average() {
+        let total = 0;
+
+        const quantity = parseFloat(
+          prompt("How Many Numbers Will You Input ? ")
+        );
+        for (let index = 1; index <= quantity; index++) {
+          const InputNum = parseFloat(prompt("Enter Number " + index + " : "));
+          total += InputNum;
+        }
+        const average = total / quantity;
+        return average;
+      }
+      let homeWorkScores;
+      let quizScores;
+
+      document.write(
+        "This Program Calculates The AverageFor Any Quantity Of Numbers  ! <p/> "
+      );
+
+      document.write("First , Enter HomeWork Scores :  <br/> ");
+      homeWorkScores = average();
+      document.write(
+        "Average Home Work Score : " + homeWorkScores.toFixed(2) + "<p/>"
+      );
+
+      document.write("Next , Enter Quiz Scores :   <br/>");
+      quizScores = average();
+      document.write(
+        "Average Home Work Score : " + quizScores.toFixed(2) + "<p/>"
+      );
+
+      document.write("Thank You For Using This Program ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

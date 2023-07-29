@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function displayStars() {
+        document.write("<br/>");
+        let num = parseInt(prompt("How Many Asterisks In This Row ?  "));
+        for (let index = 1; index <= num; index++) {
+          document.write(" * ");
+        }
+      }
+
+      document.write("Character Art Program . <br/>");
+      document.write("Display Rows Of Keyboard Characters  <br/>");
+      document.write("The Character Is The Asterisk , * .   <br/>");
+      document.write("You Choose The Length 'of Each Row ' .   <br/>");
+
+      num = parseInt(prompt(" How Many Rows Do You Want ? "));
+
+      for (let index = 1; index <= num; index++) {
+        displayStars();
+      }
+
+      document.write(" <br/> Thank You <br/>");
+    </script>
+  </head>
+  <body></body>
+</html>

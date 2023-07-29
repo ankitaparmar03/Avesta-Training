@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome To Calculation Program ! <p/>");
+
+      const num1 = parseFloat(prompt("Enter First Number : "));
+      const num2 = parseFloat(prompt("Enter Second Number : "));
+
+      document.write("You Entered First Number Is : " + num1 + "<br/>");
+      document.write("You Entered Second Number Is : " + num2 + "<p/>");
+
+      function addNumbers(num1, num2) {
+        const add = num1 + num2;
+        return add;
+      }
+      const addition = addNumbers(num1, num2);
+      document.write("Add Numbers : " + addition + "<br/>");
+
+      function multiply(num1, num2) {
+        const multiply = num1 * num2;
+        return multiply;
+      }
+      const multiplication = multiply(num1, num2);
+      document.write("Multiply Numbers : " + multiplication + "<br/>");
+
+      function divide(num1, num2) {
+        const divide = num1 / num2;
+        return divide;
+      }
+      const division = divide(num1, num2);
+      document.write("divide Numbers : " + division.toFixed(2) + "<br/>");
+
+      function modulus(num1, num2) {
+        const mod = num1 % num2;
+        return mod;
+      }
+      const module = modulus(num1, num2);
+      document.write(
+        "Module Numbers : " + module.toFixed(2) + "  %  " + "<p/>"
+      );
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

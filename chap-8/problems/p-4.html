@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let userGuess;
+      let index;
+      let correct = false;
+
+      const winningNum = Math.floor(Math.random() * 10) + 1;
+      console.log(winningNum);
+
+      index = 1;
+      while (index <= 3 && !correct) {
+        userGuess = parseInt(prompt("Enter the number : "));
+        correct = compareNumbers(userGuess, winningNum);
+        index += 1;
+      }
+
+      document.write("The winning Number was " + winningNum + "<br/>");
+      reportWinner(correct);
+      document.write("Thank you ");
+
+      function compareNumbers(userGuess, winningNum) {
+        let result = "";
+        if (userGuess == winningNum) {
+          result = true;
+        } else {
+          result = false;
+          if (userGuess < winningNum) {
+            alert("Your guess was low . <br/>");
+          } else {
+            alert("your guess was high . <br/>");
+          }
+        }
+        return result;
+      }
+
+      function reportWinner(correct) {
+        if (correct) {
+          document.write("congratulations you won <br/> ");
+        } else {
+          document.write("sorry. better lick next time .  <br/>");
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
