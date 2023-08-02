@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome To Label Maker Program !  <p/>");
+
+      function makeLabels() {
+        const lName = prompt("Enter Your Last Name : ");
+        const fName = prompt("Enter Your First Name : ");
+
+        const streetAddress = prompt("Enter Your Street Address: ");
+        const city = prompt("Enter Your City Name : ");
+
+        const state = prompt("Enter Your State Abbreviation: ");
+        const zip = prompt("Enter Your Zip code : ");
+        const numLabels = prompt("How Many Labels Would You Like Printed ? : ");
+
+        for (let i = 1; i <= numLabels; i++) {
+          document.write(
+            fName +
+              "  " +
+              lName +
+              "<br/>" +
+              streetAddress +
+              "<br/>" +
+              city +
+              "  ,  " +
+              state +
+              "  -  " +
+              zip +
+              "<br/>"
+          );
+        }
+      }
+
+      makeLabels();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let menuChoice;
+      document.write("Welcome To Word Game Program ! <p/>");
+      do {
+        menuChoice = prompt(
+          "Enter W for  Play Word Counting Game , B for Back Word Spelling Game , Or X for Exit This Program : "
+        );
+        menuChoice = menuChoice.toUpperCase();
+
+        if (menuChoice == "W") {
+          wordCountingMenu();
+        } else if (menuChoice == "B") {
+          BackWordSpellingMenu();
+        } else if (menuChoice != "X") {
+          alert("Invalid Choice: Please Enter W , B,or X ");
+        }
+      } while (menuChoice != "X");
+
+      document.write("Good Bye ! ");
+
+      function wordCountingMenu() {
+        let Sentence = prompt("Enter The Sentence ");
+        console.log(Sentence);
+        let numberOfSpaces = 0;
+        for (let i = 0; i <= Sentence.length - 1; i++) {
+          if (Sentence[i] === " ") {
+            console.log(numberOfSpaces);
+            numberOfSpaces++;
+          }
+        }
+        const numberOfWords = numberOfSpaces + 1;
+        document.write(
+          "Number Of Words In Sentence :" + numberOfWords + "<p/>"
+        );
+      }
+
+      function BackWordSpellingMenu() {
+        let backWordSentence = prompt("Enter The Sentence ");
+        let newString = "";
+
+        for (let i = backWordSentence.length - 1; i >= 0; i--) {
+          newString += backWordSentence[i];
+        }
+
+        document.write("Backward Sentence Is  : " + newString + "<p/>");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

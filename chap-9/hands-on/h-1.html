@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome ! <p/>");
+
+      let userName = prompt(
+        "Enter user Name (at least eight character and including at least one digit) :"
+      );
+
+      function isLetter(user) {
+        return user.match(/^[a-zA-Z]/);
+      }
+
+      function isDigit(user) {
+        return user.match(/\d/);
+      }
+
+      while (
+        !isLetter(userName) ||
+        !(userName.length >= 8) ||
+        !isDigit(userName)
+      ) {
+        userName = prompt(
+          "Re-enter user Name (at least eight character and including at least one digit) :"
+        );
+      }
+
+      document.write("Welcome " + userName + "<p/>");
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

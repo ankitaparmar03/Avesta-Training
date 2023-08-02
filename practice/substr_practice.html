@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        
+
+        let str =prompt("enter date"); 
+
+         function isValidDateFormate(str){
+            let result = true;
+            if(str.length != 10){
+                result = false;
+            }
+            if(str.substring(2,1) != "/" || str.substring(5,1) != "/"){
+                result = false;
+            }
+            let mm = str.substring(0,2);
+            let dd = str.substring(3,2);
+            let yyyy = str.substring(6,4);
+
+            if(!(isNumeric(mm) || (isNumeric(dd) || (isNumeric(yyyy))))){
+                result = false;
+            }
+
+            if(mm < 1 || mm > 12  || (dd < 1 || dd > 31)){
+                result = false;
+            }
+            return result;
+
+            document.write(result);
+         }
+
+         
+      /*
+         let word = "hello Word ";
+
+
+         
+         word = word.substring(0,3);
+         console.log(word , length);
+       */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

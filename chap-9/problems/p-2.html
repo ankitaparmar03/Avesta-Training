@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function rangeExceptions() {
+        let num1;
+        const outOfRangeLow = "Out of Range Low";
+        const outOfRangeHigh = "Out Of Range High";
+        try {
+          num1 = parseInt(prompt("Enter A Number Between 1 And 100 : "));
+          if (num1 < 1) {
+            throw outOfRangeLow;
+          } else if (num1 > 100) {
+            throw outOfRangeHigh;
+          }
+          document.write("Number Is In The Correct Range . <p/>");
+        } catch (err) {
+          if (err == outOfRangeLow) {
+            document.write("The Number Entered Is Too Low . <p/>");
+          } else if (err == outOfRangeHigh) {
+            document.write("The Number Entered Is Too High . <p/>");
+          }
+        }
+      }
+
+      let more = "Y";
+
+      document.write("This Program Tests Numbers In A Range . ! <p/>");
+
+      while (more.toUpperCase() == "Y") {
+        rangeExceptions();
+        more = prompt("Test Another Number  (Y/N): ");
+      }
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

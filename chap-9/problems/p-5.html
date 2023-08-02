@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let NL = "\n";
+
+      function displayInfo() {
+        let firstName = document.InfoForm.firstName.value;
+        let lastName = document.InfoForm.lastName.value;
+        let streetAddress = document.InfoForm.streetAddress.value;
+        let city = document.InfoForm.city.value;
+        let state = document.InfoForm.state.value;
+        let zip = document.InfoForm.zip.value;
+        let email = document.InfoForm.email.value;
+        let errMsg = "";
+
+        if (firstName.length <= 0) {
+          errMsg += "First name required." + NL;
+        }
+        if (lastName.length <= 0) {
+          errMsg += "Last name required." + NL;
+        }
+        if (streetAddress.length <= 0) {
+          errMsg += "Street Address required." + NL;
+        }
+        if (city.length <= 0) {
+          errMsg += "City required." + NL;
+        }
+        if (state.length != 2) {
+          errMsg += "State code must be two letters." + NL;
+        }
+        if (zip.length != 5) {
+          errMsg += "5_digit zip code required." + NL;
+        }
+        if (isNaN(zip)) {
+          errMsg += "Zip code must include only digits." + NL;
+        }
+        if (email.indexOf("@") <= 0) {
+          errMsg += "Invalid e_mail address." + NL;
+        }
+        if (email.indexOf(".") <= 0) {
+          errMsg += "Invalid e_mail address." + NL;
+        }
+        if (errMsg.length > 0) {
+          document.InfoForm.fullInfo.value = errMsg;
+        } else {
+          document.InfoForm.fullInfo.value =
+            "HERE IS YOUR INFORMATION:" +
+            NL +
+            NL +
+            "YOUR NAME: " +
+            firstName +
+            " " +
+            lastName +
+            NL +
+            "ADDRESS:" +
+            streetAddress +
+            NL +
+            "CITY , STATE , ZIP : " +
+            city +
+            "," +
+            state +
+            " " +
+            zip +
+            NL +
+            "E_MAIL ADDRESS: " +
+            email +
+            NL +
+            NL +
+            "Thank You For Your Interest!";
+        }
+      }
+    </script>
+  </head>
+  <body bgcolor="WhiteSmoke">
+    <h2>Sounds Right Customer Inquiry Form</h2>
+    <form name="InfoForm" action="">
+      <strong>Enter Your Name , Address , And E_mail Address:</strong><br />
+      First name:<input type="text" name="firstName" value="" size="40" /><br />
+      Last name:<input type="text" name="lastName" value="" size="40" /><br />
+      Street address:<input
+        type="text"
+        name="streetAddress"
+        value=""
+        size="40"
+      /><br />
+      City:<input type="text" name="city" value="" size="30" /><br />
+      State:<input type="text" name="state" value="" size="2" />
+      Zip(5_digit):<input type="text" name="zip" value="" size="5" /><br />
+      E-mail address:<input type="text" name="email" value="" size="40" />
+      <p />
+      <input
+        type="button"
+        name="displayButton"
+        value="Display Info"
+        onclick="displayInfo()"
+      />
+      <p />
+      <textarea
+        name="fullInfo"
+        readonly="true"
+        value=""
+        rows="10"
+        cols="60"
+      ></textarea>
+    </form>
+  </body>
+</html>

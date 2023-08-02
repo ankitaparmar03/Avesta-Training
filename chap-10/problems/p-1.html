@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let SIZE = 5;
+        let index;
+
+
+        let bookTitles = new Array(SIZE);
+
+
+        for( index = 0; index < SIZE; index++){
+            bookTitles[index] = prompt("Enter Title For Book # " + (index + 1) + ":");
+        }
+        document.write("Book Titles Entered :  <br/>  <br/>" );
+        for (index = 0; index < SIZE; index++){
+            document.write(bookTitles[index] + "<br/>");
+        }
+
+
+        document.write("Thank You ! ");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

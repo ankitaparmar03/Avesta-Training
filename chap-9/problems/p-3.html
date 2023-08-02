@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      document.write("Welcome To Menu Choice Program !  <p/>");
+      let menuChoice;
+
+      do {
+        menuChoice = prompt(
+          "Enter C For Customer Service menu , O For Processing Menu , Q TO Quit This Program . "
+        );
+        menuChoice = menuChoice.toUpperCase();
+
+        if (menuChoice == "C") {
+          customerServiceMenu();
+        } else if (menuChoice == "O") {
+          orderProcessingMenu();
+        } else if (menuChoice != "Q") {
+          alert("Invalid Selection : Enter C , O or Q : ");
+        }
+      } while (menuChoice != "Q");
+
+      document.write("Good Bye ! ");
+
+      function customerServiceMenu() {
+        let subMenuChoice;
+        do {
+          subMenuChoice = prompt(
+            "Enter A To Add A New Customer , C To Change Customer Info, D To Delete A Customer , or Q TO Quit This Submenu : "
+          );
+          subMenuChoice = subMenuChoice.toUpperCase();
+
+          if (subMenuChoice == "A") {
+            addCustomer();
+          } else if (subMenuChoice == "C") {
+            changeCustomer();
+          } else if (subMenuChoice == "D") {
+            deleteCustomer();
+          } else if (subMenuChoice != "Q") {
+            alert("Invalid Selection : Enter A , C ,D or Q : ");
+          }
+        } while (subMenuChoice != "Q");
+      }
+
+      function orderProcessingMenu() {
+        let subMenuOrderChoice;
+        do {
+          subMenuOrderChoice = prompt(
+            "Enter P ofr Placing An Order , I For Invoicing , S For Shipping , or Q For quit this program ."
+          );
+          subMenuOrderChoice = subMenuOrderChoice.toUpperCase();
+
+          if (subMenuOrderChoice == "P") {
+            placeOrder();
+          } else if (subMenuOrderChoice == "I") {
+            invoiceOrder();
+          } else if (subMenuOrderChoice == "S") {
+            shipOrder();
+          } else if (subMenuOrderChoice != "Q") {
+            alert("Invalid Selection : Enter P , I , S or Q : ");
+          }
+        } while (subMenuOrderChoice != "Q");
+      }
+
+      function addCustomer() {
+        document.write("In Add Customer Module . <br/>");
+      }
+      function changeCustomer() {
+        document.write("In Change Customer Module . <br/>");
+      }
+      function deleteCustomer() {
+        document.write("In Delete Customer Module . <p/>");
+      }
+      function placeOrder() {
+        document.write("In Place Order Module . <br/>");
+      }
+      function invoiceOrder() {
+        document.write("In Invoice Order Module . <br/>");
+      }
+      function shipOrder() {
+        document.write("In Ship Order Module . <p/>");
+      }
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

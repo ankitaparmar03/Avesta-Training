@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    \
+    <script>
+      function deposit(balance) {
+        let depositAmount = parseFloat(
+          prompt("Enter The Amount Of The Deposit : ")
+        );
+        balance += depositAmount;
+        document.write(
+          " Your Entered Deposit Amount Is : $ " + depositAmount + "<br/>"
+        );
+        document.write(
+          " Your New Balance Is : $ " + balance.toFixed(2) + "<p/>"
+        );
+        return balance;
+      }
+
+      function withdrawal(balance) {
+        let withdrawalAmount = parseFloat(
+          prompt("Enter The Amount Of The Withdrawal : ")
+        );
+        balance -= withdrawalAmount;
+        document.write(
+          " Your Entered Withdrawal Amount Is : $ " + withdrawalAmount + "<br/>"
+        );
+        document.write(
+          " Your New Balance Is : $ " + balance.toFixed(2) + "<p/>"
+        );
+        return balance;
+      }
+
+      function inquiry(balance) {
+        document.write(
+          "Your Current Balance Is : $ " + balance.toFixed(2) + "<p/>"
+        );
+      }
+
+      let menuChoice;
+      let balance = 0.0;
+
+      document.write("Welcome To The Bank Account Menu Program ! <p/>");
+      do {
+        menuChoice = prompt(
+          "Enter D for Deposit , W For Withdrawal , I for Inquiry or X to Exit this Program : "
+        );
+        menuChoice = menuChoice.toUpperCase();
+        if (menuChoice == "D") {
+          balance = deposit(balance);
+        } else if (menuChoice == "W") {
+          balance = withdrawal(balance);
+        } else if (menuChoice == "I") {
+          balance = inquiry(balance);
+        } else if (menuChoice != "X") {
+          alert("ERROR : Please Enter D , W , I or  X . ");
+        }
+      } while (menuChoice != "X");
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

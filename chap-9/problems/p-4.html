@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let menuChoice;
+
+      document.write("Welcome To School Games Menu ! <p/>");
+
+      do {
+        menuChoice = displayMenu();
+        menuChoice = menuChoice.toUpperCase();
+
+        if (menuChoice == "A") {
+          arithmeticMenu();
+        } else if (menuChoice == "G") {
+          geographyMenu();
+        } else if (menuChoice == "X") {
+          alert("Invalid Choice : Please Enter A , G , or X . ");
+        }
+      } while (menuChoice != "X");
+
+      document.write("Good Bye ! ");
+
+      function displayMenu() {
+        const Choice = prompt(
+          "Enter A for Play Arithmetic Game , G gor geography Games, or X for exit this program ."
+        );
+        return Choice;
+      }
+
+      function arithmeticMenu() {
+        let submenuArithmeticChoice;
+        do {
+          submenuArithmeticChoice = displayArithmeticMenu();
+          submenuArithmeticChoice = submenuArithmeticChoice.toUpperCase();
+          if (submenuArithmeticChoice == "A") {
+            playAddition();
+          } else if (submenuArithmeticChoice == "S") {
+            playSubtraction();
+          } else if (submenuArithmeticChoice != "X") {
+            alert("Invalid Choice : Please Enter A , S , or X . ");
+          }
+        } while (submenuArithmeticChoice != "X");
+      }
+
+      function displayArithmeticMenu() {
+        const Choice = prompt(
+          "Enter A for Addition , S for Subtraction , or X to exit this Menu : "
+        );
+        return Choice;
+      }
+
+      function geographyMenu() {
+        let submenuChoice;
+
+        do {
+          submenuChoice = displayGeographyMenu();
+          submenuChoice = submenuChoice.toUpperCase();
+          if (submenuChoice == "G") {
+            playGuessTheCountry();
+          } else if (submenuChoice == "N") {
+            playNameTheCapital();
+          } else if (submenuChoice != "X") {
+            alert("Invalid Choice : Please Enter G , N , or X . ");
+          }
+        } while (submenuChoice != "X");
+      }
+
+      function displayGeographyMenu() {
+        const geographyChoice = prompt(
+          "Enter  G for Guess The Country , N for Play name The Capital, or X for Exit This Program :"
+        );
+        return geographyChoice;
+      }
+
+      function playAddition() {
+        let num1 = Math.floor(Math.random() * 100) + 1;
+        let num2 = Math.floor(Math.random() * 100) + 1;
+        const correctSum = num1 + num2;
+
+        let userGuess = parseInt(
+          prompt("What is  " + num1 + " + " + num2 + " ? ")
+        );
+        document.write("You Entered  add Numbers Is  : " + userGuess + "<br/>");
+        if (userGuess == correctSum) {
+          document.write("That Is Correct!  <p/>");
+        } else {
+          document.write(
+            "Sorry. The Correct Answer Is : " + correctSum + "<p/>"
+          );
+        }
+      }
+
+      function playSubtraction() {
+        let num1 = Math.floor(Math.random() * 100) + 1;
+        let num2 = Math.floor(Math.random() * 100) + 1;
+        if (num2 > num1) {
+          const temp = num1;
+          num1 = num2;
+          num2 = temp;
+        }
+        const correctDiff = num1 - num2;
+
+        let userGuessNum = parseInt(
+          prompt("what Is " + num1 + " - " + num2 + " ? ")
+        );
+        document.write(
+          "You Entered  subTract Numbers Is : " + userGuessNum + "<br/>"
+        );
+        if (userGuessNum == correctDiff) {
+          document.write("That Is Correct ! <p/>");
+        } else {
+          document.write(
+            "Sorry. The Correct Answer Is :  " + correctDiff + "<p/>"
+          );
+        }
+      }
+
+      function playGuessTheCountry() {
+        const randomNum = Math.floor(Math.random() * 5) + 1;
+        let city;
+        let correctCountry;
+        switch (randomNum) {
+          case 1:
+            city = "Hamburg";
+            correctCountry = "GERMANY";
+            break;
+          case 2:
+            city = "Osaka";
+            correctCountry = "JAPAN";
+            break;
+
+          case 3:
+            city = "Liverpool";
+            correctCountry = "ENGLAND";
+            break;
+          case 4:
+            city = "Rio de janeiro";
+            correctCountry = "BRAZIL";
+            break;
+          case 5:
+            city = "Mombasa";
+            correctCountry = "KENYA";
+            break;
+        }
+
+        let userGuessCountry = prompt(
+          "In What Country Is " + city + " Located ? "
+        );
+        document.write(
+          "You Entered Country Name Is : " + userGuessCountry + "<br/>"
+        );
+        userGuessCountry = userGuessCountry.toUpperCase();
+        if (userGuessCountry == correctCountry) {
+          document.write("This is Correct ! <p/>");
+        } else {
+          document.write(
+            "Sorry. The correct Answer is :  " + correctCountry + "<p/>"
+          );
+        }
+      }
+
+      function playNameTheCapital() {
+        let randomNum = Math.floor(Math.random() * 5) + 1;
+        let Country;
+        let correctCapital;
+
+        switch (randomNum) {
+          case 1:
+            Country = "Afghanistan";
+            correctCapital = "KABUL";
+            break;
+          case 2:
+            Country = "Austria";
+            correctCapital = "VIENNA";
+            break;
+          case 3:
+            Country = "Canada";
+            correctCapital = "OTTAWA";
+            break;
+          case 4:
+            Country = "Finland";
+            correctCapital = "HELSINKI";
+            break;
+          case 5:
+            Country = "Portugal";
+            correctCapital = "LISBON";
+            break;
+        }
+
+        let userGuessCapital = prompt(
+          "What is the capital of " + Country + " ? "
+        );
+        document.write(
+          "You Entered Capital Name Is : " + userGuessCapital + "<br/>"
+        );
+        userGuessCapital = userGuessCapital.toUpperCase();
+        if (userGuessCapital == correctCapital) {
+          document.write("That is correct ! <p/>");
+        } else {
+          document.write(
+            "Sorry.The correct answer is :  " + correctCapital + "<p/>"
+          );
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
