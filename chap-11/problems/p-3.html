@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let SIZE = 24;
+      let currentPos = 0;
+      let lastName;
+      let firstName;
+
+      function loadArrays() {
+        lastName = new Array(
+          "Adams",
+          "Baker",
+          "Chalmers",
+          "Dawber",
+          "Englebert",
+          "Fraser",
+          "Grover",
+          "Heimlich",
+          "Iverson",
+          "Jackson",
+          "Kellogg",
+          "Landry",
+          "Matheson",
+          "Norma",
+          "Osterling",
+          "Paulson",
+          "Robbins",
+          "Sterling",
+          "Tarkington",
+          "Urbanik",
+          "Valencia",
+          "Wilson",
+          "Yardley",
+          "Zerza"
+        );
+
+        firstName = new Array(
+          "Paul",
+          "Merri",
+          "Elizabeth",
+          "Michael",
+          "Carla",
+          "Kris",
+          "Yvonne",
+          "Debbie",
+          "Paula",
+          "Peggy",
+          "Lynn",
+          "Randy",
+          "Eddie",
+          "David",
+          "Carolyn",
+          "James",
+          "Darla",
+          "Darrell",
+          "Ricky",
+          "Beth",
+          "Mitchell",
+          "Denise",
+          "Scott",
+          "Daniel"
+        );
+
+        city = new Array(
+          "Annapolis",
+          "Boston",
+          "Charleston",
+          "Dallas",
+          "Englewood",
+          "Frankfort",
+          "Griffith",
+          "Houston",
+          "Iowa City",
+          "Jacksonville",
+          "Kalamazoo",
+          "Lacrosse",
+          "Memphis",
+          "Norman",
+          "Oberlin",
+          "Portland",
+          "Quincy",
+          "Raleigh",
+          "San Jose",
+          "Tempe",
+          "Virginia City",
+          "West Lafayette",
+          "Yorba City",
+          "Zephyrhills"
+        );
+
+        state = new Array(
+          "MD",
+          "MA",
+          "SC",
+          "TX",
+          "CO",
+          "IN",
+          "IN",
+          "TX",
+          "IA",
+          "FL",
+          "MI",
+          "WI",
+          "TN",
+          "OK",
+          "OH",
+          "OR",
+          "MA",
+          "NC",
+          "CA",
+          "AZ",
+          "VA",
+          "IN",
+          "FL",
+          "FL"
+        );
+        loadForm(0);
+      }
+
+      function loadForm(sub) {
+        if (sub == "" || sub == null || isNaN(sub)) {
+          sub = 0;
+        }
+
+        if (sub == -2) {
+          sub = currentPos - 1;
+          if (sub < 0) sub = 0;
+        }
+
+        if (sub == -1) {
+          sub = currentPos + 1;
+          if (sub >= SIZE) sub = SIZE - 1;
+        }
+
+        if (sub == -3) {
+          sub = SIZE - 1;
+        }
+
+        currentPos = sub;
+        document.Mail.message.value = currentPos;
+        document.Mail.lastName.value = lastName[sub];
+        document.Mail.firstName.value = firstName[sub];
+        document.Mail.city.value = city[sub];
+        document.Mail.state.value = state[sub];
+        document.Mail.subscript.value = subscript[sub];
+      }
+
+      function changeField(field, fieldValue) {
+        if (field == "lastName") {
+          lastName[currentPos] = fieldValue;
+        }
+        if (field == "firstName") {
+          firstName[currentPos] = fieldValue;
+        }
+        if (field == "city") {
+          city[currentPos] = fieldValue;
+        }
+        if (field == "state") {
+          state[currentPos] = fieldValue;
+        }
+      }
+    </script>
+  </head>
+  <body bgcolor="LightCyan">
+    <h2>Hi-Tech Investments Mailing List Form</h2>
+
+    <form name="Mail" action="">
+      <strong> Last name:</strong><br />
+      <input
+        type="text"
+        name="lastName"
+        value=""
+        size="40"
+        onchange="changeField('lastName',this.value)"
+      />
+      <p />
+      <strong>First name:</strong><br />
+      <input
+        type="text"
+        name="firstName"
+        value=""
+        size="40"
+        onchange="changeField('firstName',this.value)"
+      />
+      <p />
+      <strong>City:</strong><br />
+      <input
+        type="text"
+        name="city"
+        value=""
+        size="40"
+        onchange="changeField('city',this.value)"
+      />
+      <p />
+      <strong>State:</strong><br />
+      <input
+        type="text"
+        name="state"
+        value=""
+        size="2"
+        onchange="changeField('state',this.value)"
+      />
+      <p />
+
+      <strong>Record:</strong>
+      <input type="text" name="subscript" value="0" size="2" />
+      <input
+        type="button"
+        value="Go To"
+        onclick="loadForm(document.Mail.subscript.value)"
+      />
+      <p />
+
+      <input type="button" value="First" onclick="loadForm(0)" />
+      <input type="button" value="Previous" onclick="loadForm(-2)" />
+
+      <input type="button" value="Next" onclick="loadForm(-1)" />
+      <input type="button" value="Last" onclick="loadForm(-3)" /><br />
+
+      <strong>Current Record: </strong>
+      <input type="text" name="message" readonly="readonly" value="" size="3" />
+      <p />
+
+      <script type="text /javascript">
+        loadArrays();
+      </script>
+    </form>
+  </body>
+</html>

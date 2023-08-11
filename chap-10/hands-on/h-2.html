@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome ! <p/>");
+      const SIZE = 500;
+      const numbers = new Array(SIZE);
+
+      for (let index = 0; index <= SIZE - 1; index++) {
+        numbers[index] = index * index;
+      }
+      console.log(numbers);
+      let found = false;
+      const searchValue = parseInt(
+        prompt("Enter The Number Is Less Than 250,000 : ")
+      );
+
+      for (let index = 0; index <= SIZE - 1; index++) {
+        if (numbers[index] == searchValue) {
+          found = true;
+          document.write("Number Matched .  <p/>");
+          break;
+        }
+      }
+      if (!found) {
+        document.write("Sorry, Number Is Not Match.  <p/>");
+      }
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

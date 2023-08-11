@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      let NL = "/n";
+      let SIZE = 20;
+      let index;
+      let fromCityName;
+      let tooCityName;
+      let startCity;
+      let endCity;
+      let flightNumber;
+      let pricePerPerson;
+
+      function loadArray() {
+        startCity = new Array(
+          "Atlanta",
+          "Atlanta",
+          "Atlanta",
+          "Atlanta",
+          "Cleveland",
+          "Cleveland",
+          "Cleveland",
+          "Cleveland",
+          "Indianapolis",
+          "Indianapolis",
+          "Indianapolis",
+          "Indianapolis",
+          "Louisville",
+          "Louisville",
+          "Louisville",
+          "Louisville",
+          "Memphis",
+          "Memphis",
+          "Memphis",
+          "Memphis"
+        );
+
+        endCity = new Array(
+          "Cleveland",
+          "Indianapolis",
+          "Louisville",
+          "Memphis",
+          "Indianapolis",
+          "Louisville",
+          "Memphis",
+          "Atlanta",
+          "Louisville",
+          "Memphis",
+          "Atlanta",
+          "Cleveland",
+          "Memphis",
+          "Atlanta",
+          "Cleveland",
+          "Indianapolis",
+          "Atlanta",
+          "Cleveland",
+          "Indianapolis",
+          "Louisville"
+        );
+
+        flightNumber = new Array(
+          "RE103",
+          "RE105",
+          "RE107",
+          "RE109",
+          "RE305",
+          "RE307",
+          "RE309",
+          "RE301",
+          "RE507",
+          "RE509",
+          "RE501",
+          "RE503",
+          "RE709",
+          "RE701",
+          "RE703",
+          "RE705",
+          "RE901",
+          "RE903",
+          "RE905",
+          "RE907"
+        );
+
+        pricePerPerson = new Array(
+          110.0,
+          100.0,
+          90.0,
+          80.0,
+          75.0,
+          90.0,
+          110.0,
+          120.0,
+          65.0,
+          80.0,
+          120.0,
+          75.0,
+          65.0,
+          90.0,
+          90.0,
+          65.0,
+          80.0,
+          110.0,
+          80.0,
+          65.0
+        );
+      }
+
+      function searchArray() {
+        document.InfoForm.flightBox.value =
+          "WELCOME TO RED EYE AIRLINES : " + "All Flights Leave At 2:00am , ";
+
+        fromCityName = document.InfoForm.startingCity.value;
+        tooCityName = document.InfoForm.endingCity.value;
+
+        if (fromCityName == tooCityName) {
+          document.InfoForm.flightBox.value +=
+            "Starting and Destination City Can't Be The Same.";
+        }
+        for (index = 0; index < SIZE; index++) {
+          if (
+            startCity[index].toUpperCase() == fromCityName &&
+            endCity[index].toUpperCase() == tooCityName
+          ) {
+            document.InfoForm.flightBox.value +=
+              startCity[index] +
+              " TO " +
+              endCity[index] +
+              ", Flight # " +
+              flightNumber[index] +
+              ", Price Per Person : $ " +
+              pricePerPerson[index].toFixed(2);
+          }
+        }
+      }
+
+      loadArray();
+    </script>
+  </head>
+
+  <body bgcolor="Salmon">
+    <h2>Red Eye Airlines Flight Information Form</h2>
+
+    <form name="InfoForm" action="">
+      <p>
+        select Your Starting City:<br />
+        <select name="startingCity">
+          <option value="ATLANTA">Atlanta (GA)</option>
+          <option value="CLEVELAND">Cleveland (OH)</option>
+          <option value="INDIANAPOLIS">Indianapolis (IN)</option>
+          <option value="LOUISVILLE">Louisville (KY)</option>
+          <option value="MEMPHIS">Memphis (TN)</option>
+        </select>
+      </p>
+
+      <p>
+        select Your Destination City:<br />
+        <select name="endingCity">
+          <option value="ATLANTA">Atlanta (GA)</option>
+          <option value="CLEVELAND">Cleveland (OH)</option>
+          <option value="INDIANAPOLIS">Indianapolis (IN)</option>
+          <option value="LOUISVILLE">Louisville (KY)</option>
+          <option value="MEMPHIS">Memphis (TN)</option>
+        </select>
+      </p>
+
+      <input
+        type="button"
+        name="goButton"
+        value="Find Flights"
+        onclick="searchArray()"
+      />
+      <p />
+
+      <textarea
+        name="flightBox"
+        readonly="true"
+        value=""
+        rows="6"
+        cols="80"
+      ></textarea>
+      <p />
+    </form>
+  </body>
+</html>

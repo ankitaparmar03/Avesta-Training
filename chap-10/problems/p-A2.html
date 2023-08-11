@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <script>
+
+        let x;
+        let index;
+        let d1;
+        let d2;
+    
+
+
+
+       d1 = new Date();
+
+        for(  index = 0; index < 6000000; index++){
+            x = 123.456789 / 987.654321;
+        }
+
+         d2 = new Date();
+        let diff = d2 - d1;
+
+        document.write("Difference In Time Is : " + diff + "Milliseconds    <p/>" );
+
+
+
+
+
+
+          let SIZE = 5000000;
+      
+          let found = false;
+          let numberArray ;
+          let searchNumber;
+          let numComparisons;
+          let low;
+          let high;
+
+
+
+          numberArray = new Array(SIZE);
+
+          for(index = 0; index < SIZE; index++){
+            numberArray[index] = index + 1;
+          }
+
+          searchNumber = parseInt(prompt("Enter A Number Between 1 And 5000000 : "));
+          index = 0;
+          numComparisons = 0;
+          d1 = new Date();
+          while(index < SIZE && (!found)){
+            numComparisons++;
+            if(numberArray[index] ==searchNumber){
+                d2 = new Date();
+                found = true;
+                document.write("Match Found At Subscript : " + index + ".   <br/>");
+            }
+            index++;
+          }
+
+          if(!found){
+            d2 = new Date();
+            document.write("Sorry, No match Found. <br/> ");
+          }
+
+
+          diff = d2 - d1;
+          document.write("Sequential Search : # of Milliseconds : " + diff + "<br/>");
+          document.write("Number Of Comparisons: " + numComparisons + "<p/>");
+
+
+
+
+          found = false;
+          low = 0;
+          high = SIZE;
+          index = Math.floor((low + high) / 2);
+          numComparisons = 0;
+          d1 = new Date();
+
+
+
+          while(low <= high && (!found)){
+            numComparisons++;
+            if(numberArray[index] == searchNumber){
+                d2 = new Date();
+                found = true;
+                document.write("Match Found At Subscript : " + index + "<br/>");
+            }
+            else{
+                if(numberArray[index] > searchNumber){
+                    high = index - 1;
+                }else{
+                    low = index + 1;
+                }
+
+                index = Math.floor((low + high) / 2);
+            }
+          }
+
+          if(!found){
+            d2 = new Date();
+            document.write("Sorry, No Match Found .  <br/> ");
+          }
+
+
+          diff = d2 - d1;
+          document.write("Binary Search : # Of Milliseconds : " + diff + "<br/>");
+          document.write("Number Of Comparisons : " + numComparisons + "<p/>");
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

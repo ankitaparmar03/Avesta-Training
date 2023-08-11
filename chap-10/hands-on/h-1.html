@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+          let SIZE = 5;
+          let citiesName ;
+          citiesName = new Array(SIZE);
+          let index ;
+
+
+
+
+          document.write("Welcome !  <p/>");
+
+          for(index = 0; index < SIZE; index++){
+            citiesName[index] = prompt("Enter The Name Of City # " + (index + 1) + " : ");
+          }
+
+          document.write("Entered Cities Name's:  " + "<br/>      <br/>");
+          for(index = 0; index < SIZE; index++){
+            document.write(citiesName[index] + "<br/>");
+          }
+
+
+
+          document.write("Thank You ! ");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let userInputNum;
+      let ES = "";
+      const MSG = "Javascript Says The Variable = ";
+
+      const userInputText = prompt("Enter A Number And press Enter : ");
+      document.write("You Entered : " + userInputText + "<p/>");
+
+      if (userInputText == null) {
+        document.write(MSG + "null" + "<br/>");
+      }
+
+      if (userInputText == ES) {
+        document.write(MSG + "An Empty String    <br/>");
+      }
+
+      if (isNaN(userInputText)) {
+        document.write(MSG + "NaN    <br/>");
+      }
+
+      userInputNum = parseFloat(userInputText);
+      document.write(
+        "Your Entry Converted To A Number Is : " + userInputNum + "<br/>"
+      );
+
+      if (userInputNum == null) {
+        document.write(MSG + "null.    <br/>");
+      }
+
+      if (userInputNum == ES) {
+        document.write(MSG + "An Empty String .    <br/>");
+      }
+
+      if (isNaN(userInputNum)) {
+        document.write(MSG + "NaN .    <br/>");
+      }
+    </script>
+
+    <script></script>
+  </head>
+  <body></body>
+</html>

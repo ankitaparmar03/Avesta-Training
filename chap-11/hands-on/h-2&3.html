@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script></script>
+  </head>
+  <body>
+    <font face="Courier New">
+    <script>
+
+      
+      let keyboardCharacter = prompt("Please Enter Keyboard Character : ");
+      let numRows = parseInt(prompt("Enter The Number Of Rows : "));
+      let numColumns = parseInt(prompt("Enter Number Of Columns : "));
+
+
+      for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numColumns; j++) {
+          if (i === 0 || i === numRows - 1) {
+            document.write(keyboardCharacter);
+          } else if (j === 0 || j === numColumns - 1) {
+            document.write(keyboardCharacter);
+          } else {
+            document.write("&nbsp");
+          }
+        }
+        document.write("<br/>");
+      }
+    </script>
+  </body>
+</html>

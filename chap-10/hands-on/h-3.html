@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("Welcome ! <p/>");
+      const SIZE = 500;
+      const numbers = new Array(SIZE);
+
+      for (let index = 0; index <= SIZE - 1; index++) {
+        numbers[index] = index * index;
+      }
+
+      const searchValue = parseInt(
+        prompt("Enter The Number Is Less Than 250,000 : ")
+      );
+
+      let found = false;
+      let low = 0;
+      let high = SIZE;
+
+      while (low <= high && !found) {
+        let index = Math.floor((low + high) / 2);
+        if (numbers[index] == searchValue) {
+          found = true;
+          document.write("Number Is Found  At Subscript : " + index + "<br/>");
+        } else {
+          if (numbers[index] > searchValue) {
+            high = index - 1;
+          } else {
+            low = index + 1;
+          }
+        }
+      }
+      if (!found) {
+        document.write("Sorry, Number Is Not Match.  <p/>");
+      }
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

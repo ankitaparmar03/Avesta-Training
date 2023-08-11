@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.write("This Is The Mode Finder ! <p/>");
+
+      let inputNum;
+      let numEntries;
+      let uniqueNumbers = -1;
+      let count;
+      let index;
+      let found = false;
+      let maxFrequency;
+      let maxLocation;
+      let freq;
+      let numModes;
+
+      numEntries = parseInt(prompt("How Many Numbers Will You Enter ? "));
+      let numbersEntered = new Array(numEntries);
+      let frequency = new Array(numEntries);
+
+      for (count = 0; count <= numEntries - 1; count++) {
+        inputNum = parseInt(prompt("Enter A Number : "));
+        found = false;
+        for (index = 0; index <= uniqueNumbers; index++) {
+          if (inputNum == numbersEntered[index]) {
+            frequency[index]++;
+            found = true;
+          }
+        }
+
+        if (!found) {
+          uniqueNumbers++;
+          numbersEntered[uniqueNumbers] = inputNum;
+          frequency[uniqueNumbers] = 1;
+        }
+      }
+
+      maxFrequency = 0;
+
+      for (index = 0; index <= uniqueNumbers; index++) {
+        if (frequency[index] > maxFrequency) {
+          maxFrequency = frequency[index];
+          maxLocation = index;
+        }
+      }
+
+      numModes = 0;
+      for (index = 0; index <= uniqueNumbers; index++) {
+        if (frequency[index] == maxFrequency) {
+          numModes++;
+        }
+      }
+
+      if (maxFrequency <= 1) {
+        document.write("There Is No Mode.   <br/>");
+        document.write("No Number Occurred More Than Once.  <br/>");
+      } else if (numModes > 1) {
+        document.write("There Are Multiple Modes.  <br/>");
+        for (index = 0; index <= uniqueNumbers; index++) {
+          let freq = frequency[index];
+          if (freq == maxFrequency) {
+            document.write(
+              numbersEntered[index] + "Occurred " + freq + "Times <br/>"
+            );
+          }
+        }
+      } else {
+        document.write(
+          "The Mode Is : " + numbersEntered[maxLocation] + "<br/>"
+        );
+        document.write("Number Of Times Occurring : " + maxFrequency + "<p/>");
+      }
+
+      document.write("Thank You ! ");
+    </script>
+  </head>
+  <body></body>
+</html>

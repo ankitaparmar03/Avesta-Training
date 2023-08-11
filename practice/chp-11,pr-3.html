@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+         let numA = 0;
+         let numB = 0;
+         let numC = 0;
+         let numD = 0;
+         let numF = 0;
+
+
+         do{
+            let score = parseFloat(prompt("Enter A Student Score As A Percentage (or -1 for quit this program) :"));
+            while(score < -1 && score > 100){
+                alert("ERROR..... enter 0-100 or -1 to quit: ");
+                score = parseFloat(prompt("Enter A Student Score As A Percentage (or -1 for quit this program) :"));
+            }
+
+            if(score >= 90){
+                document.write("Student Got A grade:  ");
+                numA++;
+            }else
+            if(score >= 80){
+                document.write("Student Got B grade:  ");
+                numB++;
+
+            }else
+            if(score >= 70){
+                document.write("Student Got C grade:  ");
+                numC++;
+            }else
+            if(score  >= 60){
+                document.write("Student Got D grade:  ");
+                numD++;
+            }else{
+                document.write("Student Got F grade (Failed):  ");
+                numF++;
+            }
+
+         }while(score != -1);
+
+
+
+         document.write("Number Of A Grades earned :  " + numA + "<br/>");
+         document.write("Number Of B Grades earned :  " + numB + "<br/>");
+         document.write("Number Of C Grades earned :  " + numC + "<br/>");
+         document.write("Number Of D Grades earned :  " + numD + "<br/>");
+         document.write("Number Of F Grades earned :  " + numF + "<br/>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
