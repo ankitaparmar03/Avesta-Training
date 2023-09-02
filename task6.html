@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const NL = "\n";
+
+      const products = [
+        {
+          id: 1,
+          name: "Book",
+          price: 200,
+        },
+        {
+          id: 2,
+          name: "Text Book",
+          price: 300,
+        },
+        {
+          id: 3,
+          name: "Marker",
+          price: 350,
+        },
+        {
+          id: 4,
+          name: "Color Box",
+          price: 400,
+        },
+        {
+          id: 5,
+          name: "Compose Box",
+          price: 250,
+        },
+        {
+          id: 6,
+          name: "Chart paper",
+          price: 100,
+        },
+        {
+          id: 7,
+          name: "Pencil",
+          price: 15,
+        },
+
+        {
+          id: 8,
+          name: "Ruler",
+          price: 20,
+        },
+
+        {
+          id: 9,
+          name: "Water Battle",
+          price: 500,
+        },
+
+        {
+          id: 10,
+          name: "Drawing paper",
+          price: 150,
+        },
+      ];
+
+      let cart = [];
+      function addCart() {
+        const selectedId = document.ProductForm.productName.value;
+        const quantity = document.ProductForm.quantity.value;
+        let selectedProduct;
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].id == selectedId) {
+            selectedProduct = {
+              name: products[i].name,
+              price: products[i].price,
+              quantity: quantity,
+              total: products[i].price * quantity,
+            };
+            cart.push(selectedProduct);
+          }
+        }
+        document.ProductForm.productBox.value = cartInfo();
+      }
+
+      function cartInfo() {
+        let grandTotal = 0;
+        let cartProduct = "";
+        for (let i = 0; i < cart.length; i++) {
+          grandTotal += cart[i].price * cart[i].quantity;
+          cartProduct +=
+            "YOUR ORDER : " +
+            NL +
+            NL +
+            `Product name Is : ${cart[i].name}` +
+            NL +
+            `Quantity : ${cart[i].quantity}` +
+            NL +
+            `Price : Rs. ${cart[i].price}` +
+            NL +
+            `Total Price : Rs. ${cart[i].total} ` +
+            NL;
+        }
+        return cartProduct + "\nGrand Total Price : Rs. " + grandTotal;
+      }
+
+      function defaultCart() {
+        document.ProductForm.productBox.value = "";
+
+        firstName = document.ProductForm.firstName.value = "";
+        lastName = document.ProductForm.lastName.value = "";
+        streetAddress = document.ProductForm.streetAddress.value = "";
+        phoneNumber = document.ProductForm.phoneNumber.value = "";
+        state = document.ProductForm.state.value = "";
+        email = document.ProductForm.email.value = "";
+        zip = document.ProductForm.zip.value = "";
+        cart = [];
+      }
+
+      let totalOrders = [];
+      let currentPosition = 0;
+      function userInfo() {
+        let firstName = document.ProductForm.firstName.value;
+        let lastName = document.ProductForm.lastName.value;
+        let streetAddress = document.ProductForm.streetAddress.value;
+        let email = document.ProductForm.email.value;
+        let phoneNumber = document.ProductForm.phoneNumber.value;
+        let state = document.ProductForm.state.value;
+        let zip = document.ProductForm.zip.value;
+
+        let errMsg = "";
+
+        if (firstName.length <= 0) {
+          errMsg += "First name required." + NL;
+        }
+        if (lastName.length <= 0) {
+          errMsg += "Last name required." + NL;
+        }
+        if (streetAddress.length <= 0) {
+          errMsg += "Street Address required." + NL;
+        }
+        if (phoneNumber.length != 10) {
+          errMsg += "Phone Number Must Be Ten Digits" + NL;
+        }
+        if (state.length != 2) {
+          errMsg += "State code must be two letters." + NL;
+        }
+        if (zip.length != 5) {
+          errMsg += "5_digit zip code required." + NL;
+        }
+        if (isNaN(zip)) {
+          errMsg += "Zip code must include only digits." + NL;
+        }
+        if (email.indexOf("@") <= 0) {
+          errMsg += "Invalid e_mail address." + NL;
+        }
+        if (email.indexOf(".") <= 0) {
+          errMsg += "Invalid e_mail address." + NL;
+        }
+        if (errMsg.length > 0) {
+          document.ProductForm.fullInfo.value = errMsg;
+        } else {
+          const Info =
+            "HERE'S YOUR ORDER INFORMATION : " +
+            NL +
+            NL +
+            "Customer Name Is : " +
+            firstName +
+            "" +
+            lastName +
+            NL +
+            "Street Address : " +
+            streetAddress +
+            NL +
+            "E-mail Address : " +
+            email +
+            NL +
+            "Contact Number : " +
+            phoneNumber +
+            NL +
+            "State : " +
+            state +
+            NL +
+            "Zip Code : " +
+            zip +
+            NL +
+            NL +
+            cartInfo();
+
+          defaultCart();
+          totalOrders.push(Info);
+
+          document.ProductForm.fullInfo.value =
+            totalOrders[totalOrders.length - 1];
+          loadForm(totalOrders.length - 1);
+        }
+      }
+
+      function loadForm(sub) {
+        let SIZE = totalOrders.length;
+
+        if (sub == "" || sub == null || isNaN(sub)) {
+          sub = 0;
+        }
+
+        if (sub == -2) {
+          sub = currentPosition - 1;
+          if (sub < 0) sub = 0;
+        }
+
+        if (sub == -1) {
+          sub = currentPosition + 1;
+          if (sub >= SIZE) sub = SIZE - 1;
+        }
+
+        currentPosition = sub;
+        document.ProductForm.fullInfo.value = totalOrders[sub];
+      }
+    </script>
+  </head>
+  <body>
+    <h2>WELCOME TO AP SHOPPING PLATFORM :</h2>
+    <br />
+
+    <form name="ProductForm" action="">
+      <h3>Select Product Name :</h3>
+      <select name="productName">
+        <option value="1">Book - 200 Rs.</option>
+        <option value="2">Text Book - 300 Rs.</option>
+        <option value="3">marker - 350 Rs.</option>
+        <option value="4">Color Box - 400 Rs.</option>
+        <option value="5">Compose box - 250 Rs.</option>
+        <option value="6">Chart paper - 100 Rs.</option>
+        <option value="7">Pencil - 15 Rs.</option>
+        <option value="8">Ruler - 20 Rs.</option>
+        <option value="9">Water Battle - 500 Rs.</option>
+        <option value="10">Drawing Paper - 150 Rs.</option>
+      </select>
+      <br />
+
+      <h3>Select Quantity :</h3>
+      <select name="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+      <p />
+
+      <input
+        type="button"
+        name="infoButton"
+        value="Add Cart"
+        onclick="addCart()"
+      />
+
+      <br />
+
+      <textarea
+        name="productBox"
+        value=""
+        readonly="true"
+        rows="15"
+        cols="30"
+      ></textarea>
+      <p />
+
+      <strong> Enter Your Information: </strong> <br />
+      <br />
+
+      FirstName :
+      <input type="text" name="firstName" value="" size="40" /><br />
+      LastName : <input type="text" name="lastName" value="" size="40" /><br />
+      StreetAddress :
+      <input type="text" name="streetAddress" value="" size="40" /><br />
+      PhoneNumber(10-digit):
+      <input type="text" name="phoneNumber" value="" size="40" /><br />
+      E-Mail : <input type="text" name="email" value="" size="40" /><br />
+
+      State : <input type="text" name="state" value="" size="2" /> Zip(5-digit)
+      : <input type="text" name="zip" value="" size="5" /><br />
+
+      <br />
+      <input
+        type="button"
+        name="submitButton"
+        value="submit"
+        onclick="userInfo()"
+      /><br />
+
+      <textarea
+        name="fullInfo"
+        value=""
+        readonly="true"
+        cols="40"
+        rows="20"
+      ></textarea>
+      <br />
+
+      <input
+        type="button"
+        name="previousButton"
+        value="Previous"
+        onclick="loadForm(-2)"
+      />
+      <input
+        type="button"
+        name="nextButton"
+        value="Next"
+        onclick="loadForm(-1)"
+      />
+    </form>
+  </body>
+</html>
